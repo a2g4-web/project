@@ -1,0 +1,128 @@
+Dictionnaire de données 
+
+Nom : id
+Code : ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom
+Code : NOM
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : description
+Code : DESCRIPTION
+Type : TEXT
+Taille : ,
+Commentaire : 
+
+Nom : price
+Code : PRICE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : name
+Code : NAME
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : location
+Code : LOCATION
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : date
+Code : DATE
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : image
+Code : IMAGE
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : recurrent
+Code : RECURRENT
+Type : BOOL
+Taille : ,
+Commentaire : 
+
+Nom : paying
+Code : PAYING
+Type : BOOL
+Taille : ,
+Commentaire : 
+
+Nom : id_article
+Code : ID_ARTICLE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : number
+Code : NUMBER
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : imagedir
+Code : IMAGEDIR
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : last_name
+Code : LAST_NAME
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : first_name
+Code : FIRST_NAME
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : email
+Code : EMAIL
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : password
+Code : PASSWORD
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : url
+Code : URL
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : commentary
+Code : COMMENTARY
+Type : TEXT
+Taille : 255,
+Commentaire : 
+
+Nom : likes
+Code : LIKES
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : type
+Code : TYPE
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+

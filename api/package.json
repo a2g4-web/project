@@ -1,0 +1,28 @@
+{
+  "name": "webprojectapi",
+  "version": "1.0.0",
+  "description": "This is the REST API of the web project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a2g4-web/project.git"
+  },
+  "author": "Clément, Théo, Claire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a2g4-web/project/issues"
+  },
+  "homepage": "https://github.com/a2g4-web/project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "mysql2": "^2.0.0",
+    "sequelize": "^5.21.2"
+  }
+}
