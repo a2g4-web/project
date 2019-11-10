@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f8a1e0e-5b75-4b5c-a084-61d2304e0a46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/campus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/commentaries.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/images.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/usertypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/articles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/articles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +56,7 @@
       <workItem from="1573223325062" duration="2992000" />
       <workItem from="1573246755067" duration="7540000" />
       <workItem from="1573339118681" duration="421000" />
-      <workItem from="1573416542196" duration="9325000" />
+      <workItem from="1573416542196" duration="10131000" />
     </task>
     <servers />
   </component>
