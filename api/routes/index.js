@@ -6,4 +6,8 @@ module.exports = (app) => {
     }));
 
     app.post('/api/category', categoriesController.create);
+
+    app.put('/api/category/:id', categoriesController.update);
+    app.get('/api/category/:id', categoriesController.get);
+    app.delete('/api/category/:id', categoriesController.delete);
 };

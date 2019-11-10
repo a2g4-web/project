@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f8a1e0e-5b75-4b5c-a084-61d2304e0a46" name="Default Changelist" comment="" />
+    <list default="true" id="9f8a1e0e-5b75-4b5c-a084-61d2304e0a46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20191108142818-create-categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20191108142818-create-categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +31,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -49,6 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573223319321</updated>
       <workItem from="1573223325062" duration="2992000" />
+      <workItem from="1573246755067" duration="7540000" />
+      <workItem from="1573339118681" duration="421000" />
     </task>
     <servers />
   </component>
@@ -60,7 +70,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
