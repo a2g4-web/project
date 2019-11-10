@@ -42,5 +42,15 @@ module.exports = {
                 res.status(404).send('article not found');
             }
         });
+    },
+    all(req, res) {
+        Articles.findAll({include: [Categories]}).then(result => {
+            if(result.length !== 0) {
+                res.status(200).send(result);
+            }
+            else {
+                res.status(404).send('No articles found');
+            }
+        });
     }
 };
