@@ -12,7 +12,7 @@ module.exports = {
             });
     },
     update(req, res) {
-        Categories.update({name: req.body.name}, {where: req.params})
+        Categories.update(req.body, {where: req.params})
             .then(affected => {
                 console.log(affected);
                 if(affected[0]) {
