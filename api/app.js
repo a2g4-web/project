@@ -1,6 +1,8 @@
 var express = require('express');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+dotenv.config();
 
 var app = express();
 var router = express.Router();

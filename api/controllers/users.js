@@ -2,12 +2,21 @@ const Users = require('../models').users;
 const Usertypes = require('../models').usertypes;
 const Campus = require('../models').campus;
 
+const jwt = require('jsonwebtoken');
+
 module.exports = {
     create(req, res) {
         Users.findOrCreate({where: req.body, defaults: req.body})
             .then(result => {
                 if(result[1]) {
-                    res.status(201).send('user created');
+                    var created = result[0];
+                    res.status(201).send(jwt.sign({
+                        userId: created['id'],
+                        name: created['first_name'] + ' ' + created['last_name'],
+                        email: created['email']
+                    }, process.env.JWT_SECRET, {
+                        expiresIn: '24h'
+                    }));
                 }
                 else {
                     res.status(400).send('user already exists');
