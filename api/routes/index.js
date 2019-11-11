@@ -47,7 +47,8 @@ module.exports = (app) => {
 
     app.post('/api/user', usersController.create);
     app.put('/api/user/:id', checkToken, usersController.update);
-    app.get('/api/user/:id', checkToken, usersController.get);
+    app.get('/api/user/me', usersController.me);
+    app.get('/api/user/login', usersController.login);
     app.delete('/api/user/:id', checkToken, usersController.delete);
     //app.get('/api/users', usersController.all);
 
