@@ -5,7 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     location: DataTypes.STRING,
     date: DataTypes.DATE,
     description: DataTypes.TEXT,
-    price: DataTypes.INTEGER
+    price: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    }
   }, {});
   Events.associate = function(models) {
     Events.hasMany(models.images);

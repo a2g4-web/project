@@ -8,10 +8,17 @@ const imagesController = controller.images;
 const eventsController = controller.events;
 const commentariesController = controller.commentaries;
 
+const jwt = require('jsonwebtoken');
+const fs = require('fs');
+
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
         message: 'Welcome to Web project API'
     }));
+
+    app.use((req, res, next) => {
+        //TODO: check JWT
+    });
 
     app.post('/api/category', categoriesController.create);
     app.put('/api/category/:id', categoriesController.update);
@@ -29,18 +36,20 @@ module.exports = (app) => {
     app.put('/api/user/:id', usersController.update);
     app.get('/api/user/:id', usersController.get);
     app.delete('/api/user/:id', usersController.delete);
-    app.get('/api/users', usersController.all);
+    //app.get('/api/users', usersController.all);
 
-    app.post('/api/usertype', usertypesController.create);
-    app.put('/api/usertype/:id', usertypesController.update);
-    app.get('/api/usertype/:id', usertypesController.get);
-    app.delete('/api/usertype/:id', usertypesController.delete);
+
+    //app.post('/api/usertype', usertypesController.create);
+    //app.put('/api/usertype/:id', usertypesController.update);
+    //app.get('/api/usertype/:id', usertypesController.get);
+    //app.delete('/api/usertype/:id', usertypesController.delete);
     app.get('/api/usertypes', usersController.all);
 
-    app.post('/api/campus', campusController.create);
-    app.put('/api/campus/:id', campusController.update);
-    app.get('/api/campus/:id', campusController.get);
-    app.delete('/api/campus/:id', campusController.delete);
+
+    //app.post('/api/campus', campusController.create);
+    //app.put('/api/campus/:id', campusController.update);
+    //app.get('/api/campus/:id', campusController.get);
+    //app.delete('/api/campus/:id', campusController.delete);
     app.get('/api/campuses', campusController.all);
 
     app.post('/api/image', imagesController.create);
