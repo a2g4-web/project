@@ -1,9 +1,56 @@
-const Categories = require('../models').Categories;
+const Categories = require('../models').categories;
 module.exports = {
     create(req, res) {
-        return Categories.create({
-            name: req.body.name
-        }).then(categories => res.status(201).send(categories))
-            .catch(error => res.status(400).send(error));
+        Categories.findOrCreate({where: req.body, defaults: req.body})
+            .then(result => {
+                if(result[1]) {
+                    res.status(201).send('category created');
+                }
+                else {
+                    res.status(400).send('category already exists');
+                }
+            });
+    },
+    update(req, res) {
+        Categories.update(req.body, {where: req.params})
+            .then(affected => {
+                console.log(affected);
+                if(affected[0]) {
+                    res.status(200).send('category updated');
+                }
+                else {
+                    res.status(400).send('category not updated');
+                }
+            });
+    },
+    get(req, res) {
+        Categories.findOne({where: req.params}).then(result => {
+            if(result == null) {
+                res.status(404).send('category not found');
+            }
+            else {
+                res.status(200).send(result);
+            }
+        });
+    },
+    delete(req, res) {
+        Categories.destroy({where: req.params}).then(result => {
+            if(result === 1) {
+                res.status(205).send('category deleted');
+            }
+            else {
+                res.status(404).send('category not found');
+            }
+        });
+    },
+    all(req, res) {
+        Categories.findAll().then(result => {
+            if(result.length !== 0) {
+                res.status(200).send(result);
+            }
+            else {
+                res.status(404).send('No categories found');
+            }
+        });
     }
 };
