@@ -8,7 +8,7 @@
             <div class="card-body">
                 <h2 class="card-title">Our bestsellers</h2>
                 <!-- Section description -->
-                <p class="grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur
+                <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
                     nostrum quisquam eum porro a pariatur veniam.</p>
             </div>

@@ -2,13 +2,20 @@
 
 @section('maincontent')
 
+    <div class="card my-5">
+        <div class="card-body">
+            <h2 class="card-title text-center w-responsive mx-auto">Evènements à venir</h2>
+            <p class="card-text text-center">Tous les évènements à venir sont listés ici</p>
+        </div>
+    </div>
+
     <div class="container my-5">
         <!-- Card -->
-        <div class="card w-responsive mx-auto">
+        <div class="card w-50 mx-auto">
 
             <!-- Card image -->
             <div class="view overlay">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <img class="img-fluid" src="assets/img/skate.jpg" alt="Card image cap">
                 <a href="#!">
                     <div class="mask rgba-white-slight"></div>
                 </a>
