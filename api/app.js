@@ -1,12 +1,16 @@
 var express = require('express');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+dotenv.config();
 
 var app = express();
+var router = express.Router();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use('/', router);
 
 var models = require('./models');
 
@@ -16,7 +20,7 @@ models.sequelize.sync().then(() => {
     console.log(err, 'Error !');
 });
 
-require('./routes')(app);
+require('./routes')(router);
 
 app.listen(8000);
 

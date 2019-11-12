@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "MineCloudVPS1234",
     "database": "projet",
-    "host": "127.0.0.1",
+    "host": "minecloud.fr",
     "dialect": "mysql",
     "operatorsAliases": false
   },
