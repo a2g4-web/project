@@ -20,13 +20,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item @yield('active1')">
                     <a class="nav-link" href="{{url('/campus')}}"><i class="fas fa-graduation-cap"></i> Nos campus</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @yield('active2')">
                     <a class="nav-link" href="{{url('/shop')}}"><i class="fas fa-shopping-bag"></i> Boutique</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @yield('active3')">
                     <a class="nav-link" href="{{url('/events')}}"><i class="fas fa-calendar-alt"></i> Evènements</a>
                 </li>
             </div>
@@ -51,29 +51,11 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" href="#modalPanier" data-target="#modalPanier" role="button" aria-expanded="false" aria-control="modal"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="nav-link" href="{{url('/basket')}}"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="modal fade right" id="modalPanier" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-backdrop="false">
-        <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                    <p class="heading lead">Panier</p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="white-text">x</span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center">
-                        <p>
-                            <i class="fas fa-shopping-cart fa-4x mb-3 animated rotateIn text-dark"></i>
-                        </p>
-                        <a href="panier.html" class="btn btn-outline-dark" role="button" aria-pressed="true">Aller au panier</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </header>
 
 @yield('maincontent')

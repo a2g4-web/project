@@ -25,4 +25,8 @@ class IndexController extends Controller
     public function signup() {
         return view('signup');
     }
+
+    public function basket() {
+        return view('basket');
+    }
 }

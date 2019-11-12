@@ -1,8 +1,14 @@
 @extends('layout')
 
+@section('active2')
+
+    active
+
+@endsection
+
 @section('maincontent')
     <!-- Section: Products v.1 -->
-    <section class="text-center my-5">
+    <section class="text-center my-4">
 
         <div class="card">
             <div class="card-body">
@@ -17,7 +23,7 @@
 
 
         <!-- Grid row -->
-        <div class="row justify-content-center w-100 my-5">
+        <div class="row justify-content-center w-100 my-4">
 
             <!-- Grid column -->
             <div class="col-lg-3 col-md-6 mb-lg-0">

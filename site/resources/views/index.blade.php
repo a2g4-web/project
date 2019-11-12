@@ -1,14 +1,14 @@
 @extends('layout')
 
 @section('maincontent')
-<div class="card my-5 animated fadeInLeft">
+<div class="card my-4 animated fadeInLeft">
     <div class="card-body text-center">
         <h1 class="card-title">Votre BDE</h1>
         <p class="card-text">Votre BDE vous propose une boutique eev</p>
     </div>
 </div>
 
-<div class="card my-5 animated fadeInRight">
+<div class="card my-4 animated fadeInRight">
     <div class="card-body text-center">
         <h2 class="card-title mb-5">Titre</h2>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
