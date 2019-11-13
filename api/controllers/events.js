@@ -1,4 +1,5 @@
 const Events = require('../models').events;
+const Images = require('../models').images;
 
 module.exports = {
     create(req, res) {
@@ -44,7 +45,7 @@ module.exports = {
         });
     },
     all(req, res) {
-        Events.findAll().then(result => {
+        Events.findAll({include: [Images]}).then(result => {
             if(result.length !== 0) {
                 res.status(200).send(result);
             }
