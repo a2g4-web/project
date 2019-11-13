@@ -20,8 +20,10 @@
                     adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
                     nostrum quisquam eum porro a pariatur veniam.</p>
                 <!-- Search form -->
-                <div class="md-form col-md-3">
-                    <input aria-label="Search" class="form-control" id="recherche" placeholder="Search" type="text">
+                <div class="row justify-content-center">
+                    <div class="md-form col-md-2">
+                        <input aria-label="Search" class="form-control" id="recherche" placeholder="Search" type="text">
+                    </div>
                 </div>
             </div>
         </div>
