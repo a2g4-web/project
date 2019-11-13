@@ -113,7 +113,8 @@ var liste = [
     "Droppable",
     "Resizable",
     "Selectable",
-    "Sortable"
+    "Sortable",
+    "Mathis"
 ];
 
 $('#recherche').autocomplete({
