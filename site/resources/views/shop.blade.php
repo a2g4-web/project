@@ -20,8 +20,14 @@
                     adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
                     nostrum quisquam eum porro a pariatur veniam.</p>
             </div>
-
+        </div>
     </section>
     <!-- Section: Products v.1 -->
+
+    <div class="container">
+        <div class="row justify-content-center articles">
+
+        </div>
+    </div>
 
 @endsection
