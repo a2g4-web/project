@@ -25,7 +25,7 @@ var eventToHTML = function () {
 
 function writeEvent(event) {
     var select = $('.events');
-    select.html(select.html() + '<div class="col-md-5 mx-auto">\n' +
+    select.html(select.html() + '<div class="col-md-5 mx-auto pb-4">\n' +
         '                <div class="card">\n' +
         '\n' +
         '                    <!-- Card image -->\n' +
@@ -80,7 +80,7 @@ var shopToHTML = function () {
 function writeArticle(article) {
     var select = $('.articles');
     select.html(select.html() +
-        '                <div class="col-md-4 col-lg-3 col-sm-12">\n' +
+        '                <div class="col-md-4 col-lg-3 col-sm-12 pb-4">\n' +
         '                    <div class="card card-cascade narrower card-ecommerce">\n' +
         '                        <!-- Card image -->\n' +
         '                        <div class="view view-cascade overlay">\n' +

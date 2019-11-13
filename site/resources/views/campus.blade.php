@@ -17,7 +17,7 @@
     <div class="card my-4 text-center">
         <div class="card-body text-center">
             <h2 class="card-title">Carte des implémentations</h2>
-            <img src="assets/carte.png" alt="carte" class="w-40">
+            <img src="assets/carte.png" alt="carte" class="w-40 img-fluid">
         </div>
     </div>
 
