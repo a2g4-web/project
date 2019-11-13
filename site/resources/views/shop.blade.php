@@ -7,7 +7,9 @@
 @endsection
 
 @section('maincontent')
-    <!-- Section: Products v.1 -->
+
+
+
     <section class="text-center my-4">
 
         <div class="card">
@@ -18,11 +20,7 @@
                     adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
                     nostrum quisquam eum porro a pariatur veniam.</p>
             </div>
-        </div>
-        <!-- Section heading -->
 
-
-        <!-- Grid row -->
         <div class="row justify-content-center w-100 my-4">
 
             <!-- Grid column -->
