@@ -22,7 +22,7 @@
                 <!-- Search form -->
                 <div class="row justify-content-center">
                     <div class="md-form col-md-2">
-                        <input aria-label="Search" class="form-control" id="recherche" placeholder="Search" type="text">
+                        <input aria-label="Search" class="form-control" id="recherche" placeholder="Rechercher" type="text">
                     </div>
                 </div>
             </div>
