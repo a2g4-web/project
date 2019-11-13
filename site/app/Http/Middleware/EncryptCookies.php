@@ -13,6 +13,7 @@ class EncryptCookies extends Middleware
      */
     protected $except = [
         'userToken',
-        'user'
+        'user',
+        'loginState'
     ];
 }

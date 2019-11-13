@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ServerException;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
@@ -27,24 +32,24 @@ class UsersController extends Controller
         $pass = $req->input('password');
         $loc = $req->input('location');
 
-        $response = $this->client->request('POST', '/api/user', [
-            'json' => [
-                'last_name' => $lastName,
-                'first_name' => $firstName,
-                'email' => $email,
-                'password' => $pass,
-                'campusId' => $loc,
-                'usertypeId' => 1
-            ]
-        ]);
-        if($response->getStatusCode() === 201)
+        try
         {
-            return redirect('/');
+            $this->client->request('POST', '/api/user', [
+                'json' => [
+                    'last_name' => $lastName,
+                    'first_name' => $firstName,
+                    'email' => $email,
+                    'password' => $pass,
+                    'campusId' => $loc,
+                    'usertypeId' => 1
+                ]
+            ]);
         }
-        else
+        catch (ClientException $e)
         {
-            return redirect('/signup');
+            return redirect('/')->with('registerState', 'error');
         }
+        return redirect('/');
     }
 
     public function login(Request $req)
@@ -52,22 +57,22 @@ class UsersController extends Controller
         $email = $req->input('email');
         $pass = $req->input('password');
 
-        $response = $this->client->request('GET', '/api/user/login', [
-            'json' => [
-                'email' => $email,
-                'password' => $pass
-            ]
-        ]);
-        if($response->getStatusCode() === 200)
+        try
         {
-            $token = $response->getBody();
-            Log::info($token);
-            return $this->loginFromToken($token);
+            $response = $this->client->request('GET', '/api/user/login', [
+                'json' => [
+                    'email' => $email,
+                    'password' => $pass
+                ]
+            ]);
         }
-        else
+        catch (ClientException $e)
         {
-            return redirect('/signup');
+            return redirect('/')->withCookie(cookie('loginState', 'error', 1));
         }
+        $token = $response->getBody();
+        Log::info($token);
+        return $this->loginFromToken($token);
     }
 
     private function loginFromToken($token)
