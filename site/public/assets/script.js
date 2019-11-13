@@ -2,13 +2,14 @@ $('.carousel').carousel({
     interval: 3000
 });
 
+
 if($(document).width() < 768) {
     $('.dropdown-menu-right').removeClass('dropdown-menu-right');
 }
 
 var eventToHTML = function () {
     $.ajax({
-        url: 'http://localhost:8001/api/events',
+        url: 'http://minecloud.fr:8001/api/events',
         type: 'GET',
         dataType: 'json',
         success: function (json, statut) {
@@ -117,5 +118,6 @@ function writeArticle(article) {
         '            </div>\n' +
         '        </div>');
 }
+
 
 
