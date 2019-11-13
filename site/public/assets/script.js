@@ -63,7 +63,7 @@ eventToHTML();
 
 var shopToHTML = function () {
     $.ajax({
-        url: 'http://localhost:8001/api/articles',
+        url: 'http://minecloud.fr:8001/api/articles',
         type: 'GET',
         dataType: 'json',
         success: function (json, statut) {
@@ -79,15 +79,13 @@ var shopToHTML = function () {
 
 function writeArticle(article) {
     var select = $('.articles');
-    select.html(select.html() + '<div class="container my-4">\n' +
-        '            <div class="row justify-content-center">\n' +
+    select.html(select.html() +
         '                <div class="col-md-4 col-lg-3 col-sm-12">\n' +
         '                    <div class="card card-cascade narrower card-ecommerce">\n' +
         '                        <!-- Card image -->\n' +
         '                        <div class="view view-cascade overlay">\n' +
-        '                            <img src="https://images-na.ssl-images-amazon.com/images/I/31QIre08LGL._SY355_.jpg" class="card-img-top mx-auto"\n' +
-        '                                 alt="sample photo" style="height: 300px; width: auto;">\n' +
-        '                            <a>\n' +
+        '                            <img class="px-auto" src="' + article.imageUrl + '" alt="Card image cap" height="350"> \n' +
+        '                            <a href="#!">\n' +
         '                                <div class="mask rgba-white-slight"></div>\n' +
         '                            </a>\n' +
         '                        </div>\n' +
@@ -96,28 +94,17 @@ function writeArticle(article) {
         '                        <div class="card-body card-body-cascade text-center">\n' +
         '                            <!-- Category & Title -->\n' +
         '\n' +
-        '                            <h4 class="card-title">\n' +
-        '                                <strong>\n' +
-        '                                    <a href="">Denim trousers</a>\n' +
-        '                                </strong>\n' +
-        '                            </h4>\n' +
+        '                            <h4 class="card-title">' + article.name +' <\h4>\n' +
         '\n' +
         '                            <!-- Description -->\n' +
-        '                            <p class="card-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit..</p>\n' +
-        '                            <div>\n' +
-        '                                <p class="text-dark">49$</p>\n' +
-        '                            </div>\n' +
-        '                            <div>\n' +
-        '                                <button type="button" class="btn btn-elegant">Ajouter au panier <i class="fas fa-shopping-cart"></i></button>\n' +
-        '                            </div>\n' +
-        '                        </div>\n' +
-        '                        <!-- Card content -->\n' +
+        '                            <p class="card-text">' + article.description +'<\p>\n' +
+        '                            <!-- button --> \n'+
+        '                            <p class="card-price">' + article.price +'€</p>\n' +
+        '                            <a href="#" class="btn btn-primary"> Button<\a>\n' +
         '                    </div>\n' +
         '                    <!-- Card -->\n' +
-        '                </div>\n' +
-        '            </div>\n' +
-        '        </div>');
+        '                </div>');
 }
 
-
+shopToHTML();
 
