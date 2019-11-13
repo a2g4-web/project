@@ -21,8 +21,11 @@
                     nostrum quisquam eum porro a pariatur veniam.</p>
                 <!-- Search form -->
                 <div class="row justify-content-center">
-                    <div class="md-form col-md-2">
+                    <div class="md-form input-group col-md-2">
                         <input aria-label="Search" class="form-control" id="recherche" placeholder="Rechercher" type="text">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue"><i class="fas fa-search"></i></a></span>
+                        </div>
                     </div>
                 </div>
             </div>
