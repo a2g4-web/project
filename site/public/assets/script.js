@@ -60,4 +60,25 @@ var getEuro = function(price) {
 
 eventToHTML();
 
+var shopToHTML = function () {
+    $.ajax({
+        url: 'http://localhost:8001/api/articles',
+        type: 'GET',
+        dataType: 'json',
+        success: function (json, statut) {
+            json.forEach(function (obj) {
+                writeArticle(obj);
+            });
+        },
+        error: function (resultat, statut) {
+            console.log(resultat + ': ' + statut);
+        }
+    });
+};
+
+function writeArticle(article) {
+    var select = $('.articles');
+    select.html(select.html() + '<div class="container my-4">\n +'
+}
+
 
