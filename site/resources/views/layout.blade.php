@@ -45,26 +45,33 @@
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <form class="px-4 py-3">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="email@exemple.com">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
-                                </div>
-                                <div class="text-center">
-                                <button type="submit" class="btn btn-dark" >Sign in</button>
-                                </div>
-                                <div class="text-center pt-5">
-                                <p> Pas encore inscrit ?</p>
-                                <a class="btn btn-dark text-white" href="{{url('/signup')}}">Inscrivez-vous maintenant</a>
-                                </div>
-                            </form>
-                        </div>
+                        @if(\Illuminate\Support\Facades\Cookie::get('user') != null)
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{\App\User::getUser()['first_name']}} {{\App\User::getUser()['last_name']}}</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/api/logout">Déconnexion</a>
+                            </div>
+                        @else
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <form class="px-4 py-3" action="/api/login" method="post">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="email@exemple.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-dark" >Sign in</button>
+                                    </div>
+                                    <div class="text-center pt-5">
+                                        <p> Pas encore inscrit ?</p>
+                                        <a class="btn btn-dark text-white" href="{{url('/signup')}}">Inscrivez-vous maintenant</a>
+                                    </div>
+                                </form>
+                            </div>
+                        @endif
                     </div>
                 </li>
                 <li class="nav-item">
