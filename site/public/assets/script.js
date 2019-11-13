@@ -8,7 +8,7 @@ if($(document).width() < 768) {
 
 var eventToHTML = function () {
     $.ajax({
-        url: 'http://localhost:8001/api/events',
+        url: 'http://minecloud.fr:8001/api/events',
         type: 'GET',
         dataType: 'json',
         success: function (json, statut) {
