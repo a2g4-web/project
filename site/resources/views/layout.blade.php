@@ -24,7 +24,18 @@
                     <a class="nav-link" href="{{url('/campus')}}"><i class="fas fa-graduation-cap"></i> Nos campus</a>
                 </li>
                 <li class="nav-item @yield('active2')">
-                    <a class="nav-link" href="{{url('/shop')}}"><i class="fas fa-shopping-bag"></i> Boutique</a>
+                    <div class="btn-group">
+                        <a class="nav-link pr-0" href="{{url('/shop')}}"><i class="fas fa-shopping-bag"></i> Boutique</a>
+                        <a class="nav-link dropdown-toggle pl-0" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Vetements</a>
+                            <a class="dropdown-item" href="#">Accessoires</a>
+                            <a class="dropdown-item" href="#">Goodies</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item @yield('active3')">
                     <a class="nav-link" href="{{url('/events')}}"><i class="fas fa-calendar-alt"></i> Evènements</a>
@@ -44,8 +55,9 @@
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" placeholder="Password">
                                 </div>
-                                <button type="submit" class="btn btn-dark">Sign in</button>
-                                <a href="inscription.html">S'inscrire</a>
+                                <button type="submit" class="btn btn-dark" >Sign in</button>
+                                <p> Pas encore inscrit ?</p>
+                                <button class="btn btn-dark" href="{{url('/signup')}}">Inscrivez-vous maintenant</button>
                             </form>
                         </div>
                     </div>
