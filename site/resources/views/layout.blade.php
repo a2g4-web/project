@@ -55,9 +55,13 @@
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" placeholder="Password">
                                 </div>
+                                <div class="text-center">
                                 <button type="submit" class="btn btn-dark" >Sign in</button>
+                                </div>
+                                <div class="text-center pt-5">
                                 <p> Pas encore inscrit ?</p>
-                                <button class="btn btn-dark" href="{{url('/signup')}}">Inscrivez-vous maintenant</button>
+                                <a class="btn btn-dark text-white" href="{{url('/signup')}}">Inscrivez-vous maintenant</a>
+                                </div>
                             </form>
                         </div>
                     </div>

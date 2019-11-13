@@ -26,7 +26,8 @@ class IndexController extends Controller
         return view('signup');
     }
 
-    public function basket() {
+    public function basket(Request $req) {
+        
         return view('basket');
     }
 }

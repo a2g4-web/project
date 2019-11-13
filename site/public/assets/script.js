@@ -25,12 +25,12 @@ var eventToHTML = function () {
 
 function writeEvent(event) {
     var select = $('.events');
-    select.html(select.html() + '<div class="col-md-4 mx-auto">\n' +
-        '                <div class="card h-100">\n' +
+    select.html(select.html() + '<div class="col-md-5 mx-auto">\n' +
+        '                <div class="card">\n' +
         '\n' +
         '                    <!-- Card image -->\n' +
         '                    <div class="view overlay">\n' +
-        '                        <img class="px-auto" src="' + event.images[0].url + '" alt="Card image cap" height="234" width="auto">\n' +
+        '                        <img class="px-auto" src="' + event.images[0].url + '" alt="Card image cap" height="350">\n' +
         '                        <a href="#!">\n' +
         '                            <div class="mask rgba-white-slight"></div>\n' +
         '                        </a>\n' +
