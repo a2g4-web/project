@@ -19,15 +19,23 @@
                 <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
                     nostrum quisquam eum porro a pariatur veniam.</p>
+                <!-- Search form -->
+                <div class="md-form col-md-3">
+                    <input aria-label="Search" class="form-control" id="recherche" placeholder="Search" type="text">
+                </div>
             </div>
         </div>
     </section>
     <!-- Section: Products v.1 -->
+
+
 
     <div class="container">
         <div class="row justify-content-center articles">
 
         </div>
     </div>
+
+
 
 @endsection

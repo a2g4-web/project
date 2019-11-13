@@ -100,7 +100,7 @@ function writeArticle(article) {
         '                            <p class="card-text">' + article.description +'<\p>\n' +
         '                            <!-- button --> \n'+
         '                            <p class="card-price">' + article.price +'€</p>\n' +
-        '                            <a href="#" class="btn btn-primary"> Button<\a>\n' +
+        '                            <a href="#" class="btn btn-primary"> Mettre au panier<\a>\n' +
         '                    </div>\n' +
         '                    <!-- Card -->\n' +
         '                </div>');
@@ -108,3 +108,14 @@ function writeArticle(article) {
 
 shopToHTML();
 
+var liste = [
+    "Draggable",
+    "Droppable",
+    "Resizable",
+    "Selectable",
+    "Sortable"
+];
+
+$('#recherche').autocomplete({
+    source : liste
+});
