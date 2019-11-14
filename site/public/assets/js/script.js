@@ -109,12 +109,26 @@ function writeArticle(article) {
 shopToHTML();
 
 var liste = [
-    "Draggable",
-    "Droppable",
-    "Resizable",
-    "Selectable",
-    "Sortable",
-    "Mathis"
+    "Badges",
+    "Bandana",
+    "Verre Coktail",
+    "Bonnet",
+    "Casquette",
+    "Coque Iphone",
+    "Coque Samsung",
+    "Dessous de Verre",
+    "Gourde",
+    "Tasse Inox",
+    "Nounours",
+    "Sac en tissu",
+    "Sac à Corde",
+    "Sac en Bandoulière",
+    "Tablier",
+    "Taie d'Oreiller",
+    "Tapis de Souris",
+    "Tasse en Verre",
+    "Sweat",
+    "Pull"
 ];
 
 $('#recherche').autocomplete({

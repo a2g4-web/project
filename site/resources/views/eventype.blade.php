@@ -36,9 +36,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModal">Galerie photos</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button>-->
                 </div>
                 <div class="modal-body">
 
