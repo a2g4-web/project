@@ -103,6 +103,7 @@
     src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
     crossorigin="anonymous"></script>
-<script src="/assets/script.js"></script>
+<script src="/assets/js/script.js"></script>
+@yield('scripts')
 </body>
 </html>

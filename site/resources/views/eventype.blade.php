@@ -3,10 +3,50 @@
 @section('maincontent')
 
     <div class="card my-4 text-center">
-        <div class="card-body">
-            <h2 class="card-title">{{$data['name']}}</h2>
-            <h3 class="card-description text-center">{{$data['description']}}</h3>
-            <a href="#" class="btn btn-primary btn-elegant" style="left:40%">Inscription</a>
+        <div class="container-fluid mb-3">
+            <div class="card-body">
+                <div class="row float-left" style="width: 250px; height: auto;">
+                    <a class="event-header" href="#" data-toggle="modal" data-target="#centralModalLg">
+
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="offset-md-3 col-md-4">
+                        <h2 class="card-title">{{$data['name']}}</h2><br>
+                    </div>
+                    <div class="offset-md-2 col-md-3">
+                        <a href="#" class="btn btn-primary btn-elegant">Inscription</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-md-3 col-md-4">
+                        <h3 class="card-description">{{$data['description']}}</h3>
+                    </div>
+                    <div class="offset-md-2 col-md-3">
+                        <a href="#" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="centralModalLg" tabindex="1" role="dialog" aria-labelledby="myModal"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModal">Galerie photos</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -14,10 +54,18 @@
     <section class="my-5">
     <div class="card bg-white">
         <!-- Card header -->
-        <h3 class="card-header border-0 font-weight-bold bg-white">Commentaires</h3>
+        <h3 class="card-header border-0 font-weight-bold bg-white text-center pt-4">Commentaires</h3>
 
-        <div>
-            
+        <div class="mt-3">
+            <ul class="list-group">
+            @foreach($coms as $commentary)
+                @if($commentary['eventId'] === $data['id'])
+                    <li class="list-group-item">
+                        <div class="md-v-line"></div><i class="fas fa-comments mr-4"></i> <span style="font-weight: bold;">{{$commentary['user']['first_name']}} {{$commentary['user']['last_name']}}:</span> {{$commentary['commentary']}}
+                    </li>
+                @endif
+            @endforeach
+            </ul>
         </div>
 
         <div class="media d-block d-md-flex">
@@ -41,5 +89,11 @@
         </div>
     </section>
     <!--Section: Comments-->
+
+@endsection
+
+@section('scripts')
+
+    <script src="/assets/js/eventype.js"></script>
 
 @endsection

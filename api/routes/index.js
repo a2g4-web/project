@@ -75,7 +75,6 @@ module.exports = (app) => {
     app.delete('/api/image/:id', checkToken, imagesController.delete);
     app.get('/api/images', imagesController.all);
     app.post('/api/image/:id/like', likesController.create);
-    app.get('/api/image/:id/likes', likesController.all);
 
     app.post('/api/event', checkToken, eventsController.create);
     app.put('/api/event/:id', checkToken, eventsController.update);
@@ -84,6 +83,7 @@ module.exports = (app) => {
     app.get('/api/events', eventsController.all);
     app.post('/api/event/:id/register', participateController.create);
     app.get('/api/event/:id/participants', participateController.all);
+    app.get('/api/event/:id/likes', likesController.all);
 
     app.post('/api/commentary', checkToken, commentariesController.create);
     app.put('/api/commentary/:id', checkToken, commentariesController.update);

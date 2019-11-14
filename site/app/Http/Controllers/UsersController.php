@@ -103,8 +103,6 @@ class UsersController extends Controller
         $com = $req->input('commentaries');
         try
         {
-            $referer = intval(str_replace(url('/events'), '', str_replace('/', '', $req->header('Referer'))));
-            Log::info($referer);
             $this->client->request('POST', '/api/commentary', [
                 'json' => [
                     'commentary' => $com,
@@ -120,6 +118,10 @@ class UsersController extends Controller
         {
             return redirect('/')->with('addcomState', 'error');
         }
-        return redirect('/');
+        return back();
+    }
+
+    public function like($eventId) {
+        $like = $this->client->request('GET', '/api/likes');
     }
 }

@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     Events.hasMany(models.images);
     Events.hasMany(models.participate);
     Events.hasMany(models.commentaries);
+    Events.hasMany(models.likes);
   };
   return Events;
 };

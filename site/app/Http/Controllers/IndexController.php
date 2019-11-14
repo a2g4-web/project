@@ -52,6 +52,15 @@ class IndexController extends Controller
         {
             $data = json_decode($response->getBody(), true);
         }
-        return view('eventype', ['data' => $data]);
+        $comsData = array();
+        $coms = $this->client->request('GET', '/api/commentaries');
+        if($response->getStatusCode() === 200)
+        {
+            $comsData = json_decode($coms->getBody(), true);
+        }
+        $imgData = array();
+        $imgs = $this->client->request('GET', '/api/images');
+
+        return view('eventype', ['data' => $data, 'coms' => $comsData]);
     }
 }

@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     url: DataTypes.STRING
   }, {});
   Images.associate = function(models) {
-    Images.hasMany(models.likes);
     Images.belongsTo(models.events);
   };
   return Images;
