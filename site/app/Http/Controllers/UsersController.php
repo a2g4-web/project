@@ -85,7 +85,7 @@ class UsersController extends Controller
         ]);
         if($response->getStatusCode() === 200)
         {
-            return redirect('/')->withCookies([cookie('userToken', $token, 1440), cookie('user', $response->getBody(), 1440)]);
+            return back()->withCookies([cookie('userToken', $token, 1440), cookie('user', $response->getBody(), 1440)]);
         }
         else
         {
