@@ -140,6 +140,9 @@ class UsersController extends Controller
                 $this->client->request('DELETE', '/api/like', [
                     'json' => [
                         'eventId' => $eventId
+                    ],
+                    'headers' => [
+                        'authorization' => 'Bearer ' . Cookie::get('userToken')
                     ]
                 ]);
             }

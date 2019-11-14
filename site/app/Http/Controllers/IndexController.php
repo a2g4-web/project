@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -58,9 +59,17 @@ class IndexController extends Controller
         {
             $comsData = json_decode($coms->getBody(), true);
         }
-        $imgData = array();
-        $imgs = $this->client->request('GET', '/api/images');
-
-        return view('eventype', ['data' => $data, 'coms' => $comsData]);
+        $likesData = array();
+        try {
+            $like = $this->client->request('GET', '/api/event/' . $id . '/likes');
+            if($like->getStatusCode() === 200)
+            {
+                $likesData = json_decode($like->getBody(), true);
+            }
+        }
+        catch (ClientException $e) {
+            return view('eventype', ['data' => $data, 'coms' => $comsData, 'likes' => $likesData]);
+        }
+        return view('eventype', ['data' => $data, 'coms' => $comsData, 'likes' => $likesData]);
     }
 }
