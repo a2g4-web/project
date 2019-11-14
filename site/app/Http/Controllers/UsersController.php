@@ -30,7 +30,7 @@ class UsersController extends Controller
         $lastName = $req->input('last_name');
         $firstName = $req->input('first_name');
         $email = $req->input('email');
-        Hash::make($pass = $req->input('password'));
+        $pass = md5($req->input('password'));
         $loc = $req->input('location');
 
         try
@@ -56,7 +56,7 @@ class UsersController extends Controller
     public function login(Request $req)
     {
         $email = $req->input('email');
-        Hash::make($pass = $req->input('password'));
+        $pass = md5($req->input('password'));
 
         try
         {
