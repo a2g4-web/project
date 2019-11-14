@@ -8,13 +8,15 @@
         </div>
     </div>
 
-<div class="box">
-    <div class="card my-4 animated fadeInRight col-md-5 mx-5">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+    <div class="card my-4 animated fadeInRight mx-5">
         <div class="card-body text-center">
             <h2 class="card-title">Evenements</h2>
             <p class="card-text">Quelques photos des évenements précédents !</p>
 
-            <div class="container_carousel">
+            <div class="container container_carousel">
                 <div class="carousel">
                     <div class="item a">Barbecue<img src="assets/img/img_carousel/barbecue_c.jpg"></div>
                     <div class="item b">Canoe <img src="assets/img/img_carousel/canoe_c.jpg"></div>
@@ -26,13 +28,14 @@
             </div>
         </div>
     </div>
-
-    <div class="card my-4 animated fadeInLeft col-md-5 mx-5">
+        </div>
+        <div class="col-md-6">
+    <div class="card my-4 animated fadeInLeft mx-5">
         <div class="card-body text-center">
             <h2 class="card-title">Boutique</h2>
             <p class="card-text">Quelques articles en ventes dans notre boutique !</p>
 
-            <div class="container_carousel">
+            <div class="container container_carousel">
                 <div class="carousel">
                     <div class="test a">EcoCup <img src="assets/img/img_carousel/ecocup.jpg"></div>
                     <div class="test b">Mug <img src="assets/img/img_carousel/mug.jpg"></div>
@@ -44,6 +47,9 @@
             </div>
         </div>
     </div>
+        </div>
+        </div>
+
 </div>
 
 
