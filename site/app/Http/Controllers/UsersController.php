@@ -42,7 +42,7 @@ class UsersController extends Controller
                     'email' => $email,
                     'password' => $pass,
                     'campusId' => $loc,
-                    'usertypeId' => 1
+                    'usertypeId' => 1,
                 ]
             ]);
         }
