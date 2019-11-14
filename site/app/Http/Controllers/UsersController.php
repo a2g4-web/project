@@ -97,4 +97,25 @@ class UsersController extends Controller
     {
         return redirect('/')->withCookies([cookie('userToken', null), cookie('user', null)]);
     }
+
+    public function addcom(Request $req)
+    {
+        $com = $req->input('commentaries');
+        try
+        {
+            $this->client->request('POST', '/api/commentary', [
+                'json' => [
+                    'commentary' => $com
+                ],
+                'headers' => [
+                    'authorization' => Cookie::get('userToken')
+                ]
+            ]);
+        }
+        catch (ClientException $e)
+        {
+            return redirect('/')->with('addcomState', 'error');
+        }
+        return redirect('/');
+    }
 }

@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
     <title> BDE CESI</title>
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark container-fluid animated fadeInDown" style="z-index: 1;">
         <a class="navbar-brand" href="{{url('/')}}">
-            <img src="assets/logo.png" alt="Logo BDE" height="50px">
+            <img src="/assets/logo.png" alt="Logo BDE" height="50px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle nav">
             <span class="navbar-toggler-icon"></span>
@@ -103,6 +103,6 @@
     src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
     crossorigin="anonymous"></script>
-<script src="assets/script.js"></script>
+<script src="/assets/script.js"></script>
 </body>
 </html>
