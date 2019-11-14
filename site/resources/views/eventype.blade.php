@@ -16,9 +16,13 @@
         <!-- Card header -->
         <h3 class="card-header border-0 font-weight-bold bg-white">Commentaires</h3>
 
+        <div>
+            @foreach($)
+        </div>
+
         <div class="media d-block d-md-flex">
             <div class="media-body text-center text-md-left ml-md-3 ml-0 text-dark">
-                <form action="/api/addcom" method="post">
+                <form action="/api/addcom/{{$data['id']}}" method="post">
                 <div class="form-group mt-3">
                     <label for="quickReplyFormComment">Votre commentaire</label>
                     <textarea class="form-control" id="comment" name="commentaries" rows="5"></textarea>

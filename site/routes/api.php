@@ -16,4 +16,4 @@ use Illuminate\Http\Request;
 Route::post('/register', 'UsersController@register');
 Route::post('/login', 'UsersController@login');
 Route::get('/logout', 'UsersController@logout');
-Route::post('/addcom', 'UsersController@addcom');
+Route::post('/addcom/{eventId}', 'UsersController@addcom');

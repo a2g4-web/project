@@ -1,5 +1,5 @@
 const Commentaries = require('../models').commentaries;
-const Images = require('../models').images;
+const Events = require('../models').events;
 const Users = require('../models').users;
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
             });
     },
     get(req, res) {
-        Commentaries.findOne({where: req.params, include: [Users, Images]}).then(result => {
+        Commentaries.findOne({where: req.params, include: [Users, Events]}).then(result => {
             if(result == null) {
                 res.status(404).send('commentary not found');
             }
@@ -46,7 +46,7 @@ module.exports = {
         });
     },
     all(req, res) {
-        Commentaries.findAll({include: [Users, Images]}).then(result => {
+        Commentaries.findAll({include: [Users, Events]}).then(result => {
             if(result.length !== 0) {
                 res.status(200).send(result);
             }
