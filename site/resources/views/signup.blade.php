@@ -25,17 +25,17 @@
 
                             <div class="md-form">
                                 <i class="fa fa-envelope prefix grey-text"></i>
-                                <input type="text" name="email" id="email" class="form-control" placeholder="Adresse Mail">
+                                <input type="text" name="email" id="emailSignup" class="form-control" placeholder="Adresse Mail">
                             </div>
 
                             <div class="md-form">
                                 <i class="fa fa-lock prefix grey-text"></i>
-                                <input type="password" name="password" id="pdw1" class="form-control" placeholder="Mot de passe">
+                                <input type="password" name="password" id="pwd1" class="form-control" placeholder="Mot de passe">
                             </div>
 
                             <div class="md-form">
                                 <i class="fa fa-lock prefix grey-text"></i>
-                                <input type="password" id="pdw2" class="form-control" placeholder="Confirmation">
+                                <input type="password" id="pwd2" class="form-control" placeholder="Confirmation">
                             </div>
 
                             <div class="md-form">
@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="text-center py-4">
-                                <button class="btn btn-elegant" type="submit">Register</button>
+                                <button class="btn btn-elegant disabled" id="sbBtn" type="submit">Register</button>
                             </div>
                         </form>
                     </div>
