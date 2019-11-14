@@ -98,14 +98,18 @@ class UsersController extends Controller
         return redirect('/')->withCookies([cookie('userToken', null), cookie('user', null)]);
     }
 
-    public function addcom(Request $req)
+    public function addcom(Request $req, $eventId)
     {
         $com = $req->input('commentaries');
         try
         {
+            $referer = intval(str_replace(url('/events'), '', str_replace('/', '', $req->header('Referer'))));
+            Log::info($referer);
             $this->client->request('POST', '/api/commentary', [
                 'json' => [
-                    'commentary' => $com
+                    'commentary' => $com,
+                    'eventId' => $eventId,
+                    'userId' => User::getUser()['id']
                 ],
                 'headers' => [
                     'authorization' => Cookie::get('userToken')
