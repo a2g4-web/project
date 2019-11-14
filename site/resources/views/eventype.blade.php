@@ -42,59 +42,7 @@
             </div>
         </div>
         </div>
-
-        <!--Pagination -->
-        <nav class="d-flex justify-content-center mt-3">
-            <ul class="pagination pg-dark mb-0">
-
-                <!--First-->
-                <li class="page-item">
-                    <a class="page-link" style="color: white">Première</a>
-                </li>
-
-                <!--Arrow left-->
-                <li class="page-item">
-                    <a class="page-link" aria-label="Previous" style="color: white">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only" style="color: white">Precédente</span>
-                    </a>
-                </li>
-
-                <!--Numbers-->
-                <li class="page-item active" style="color: white">
-                    <a class="page-link">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link">5</a>
-                </li>
-
-                <!--Arrow right-->
-                <li class="page-item">
-                    <a class="page-link" aria-label="Next" style="color: white;">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only" style="color: white">Suivante</span>
-                    </a>
-                </li>
-
-                <!--Last-->
-                <li class="page-item">
-                    <a class="page-link" style="color: white">Dernière</a>
-                </li>
-
-            </ul>
-        </nav>
-        <!--Pagination -->
-
     </section>
     <!--Section: Comments-->
-    
+
 @endsection

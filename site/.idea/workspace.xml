@@ -73,20 +73,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/eventype.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+            <state relative-caret-position="493">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="e#806#826#0#HTML" expanded="true" />
                 <element signature="e#895#915#0#HTML" expanded="true" />
-                <element signature="e#2123#2143#0#HTML" expanded="true" />
-                <element signature="e#2326#2346#0#HTML" expanded="true" />
-                <element signature="e#2363#2370#1#HTML" expanded="true" />
-                <element signature="e#2424#2444#0#HTML" expanded="true" />
-                <element signature="e#2585#2605#0#HTML" expanded="true" />
-                <element signature="e#3257#3277#0#HTML" expanded="true" />
-                <element signature="e#3292#3299#1#HTML" expanded="true" />
-                <element signature="e#3353#3373#0#HTML" expanded="true" />
-                <element signature="e#3542#3562#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -351,7 +342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29845000" />
+    <option name="totallyTimeSpent" value="29918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
