@@ -14,11 +14,9 @@
 
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Our bestsellers</h2>
+                <h2 class="card-title">Notre boutique</h2>
                 <!-- Section description -->
-                <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
-                    nostrum quisquam eum porro a pariatur veniam.</p>
+                <p class="card-text text-center">Bienvenue sur la boutique de votre BDE, vous trouverez grand nombre d'articles à votre disposition</p>
                 <!-- Search form -->
                 <div class="row justify-content-center">
                     <div class="md-form input-group col-md-2">

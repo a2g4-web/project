@@ -84,7 +84,7 @@ function writeArticle(article) {
         '                    <div class="card card-cascade narrower card-ecommerce">\n' +
         '                        <!-- Card image -->\n' +
         '                        <div class="view view-cascade overlay">\n' +
-        '                            <img class="px-auto" src="' + article.imageUrl + '" alt="Card image cap" height="350"> \n' +
+        '                            <img class="px-auto" src="' + article.imageUrl + '" alt="Card image cap" height="300"> \n' +
         '                            <a href="#!">\n' +
         '                                <div class="mask rgba-white-slight"></div>\n' +
         '                            </a>\n' +
