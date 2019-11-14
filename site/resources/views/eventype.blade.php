@@ -16,13 +16,13 @@
                     </div>
                     <div class="offset-md-2 col-md-3">
                         @if($participate == false)
-                            <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
-                        @else
-                            @if(\App\User::getUser() != null)
-                                <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
-                            @else
+                            @if(\App\User::getUser() == null)
                                 <a href="#" class="btn btn-primary btn-elegant disabled">Vous devez être connecté pour participer</a>
+                            @else
+                                <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
                             @endif
+                        @else
+                            <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
                         @endif
                     </div>
                 </div>
@@ -55,10 +55,24 @@
                     </button>-->
                 </div>
                 <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row modal-img justify-content-center">
 
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Close</button>
+                    @if(\App\User::getUser() != null)
+                        <form class="md-form" id="fileForm" method="POST" enctype="multipart/form-data" action="/api/uploadfile/{{$data['id']}}">
+                            <div class="file-field">
+                                <div class="btn btn-primary btn-sm">
+                                    <span id="addFile">Ajouter</span>
+                                    <input type="file" id="fileInput" name="fileInput" hidden>
+                                </div>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ function loadEventImage() {
             }
             for(obj of json) {
                 if(obj.eventId === id) {
-                    $('.modal-body').append('<img class="img-fluid" width="300" src="' + obj.url + '" alt="galery image">');
+                    $('.modal-img').append('<img class="img-fluid w-25 mx-1 my-1" src="' + obj.url + '" alt="galery image">');
                 }
             }
         }
@@ -23,3 +23,19 @@ function loadEventImage() {
 }
 
 loadEventImage();
+
+$('#addFile').click(function () {
+   $('#fileInput').click();
+});
+
+$('#fileInput').change(function (e) {
+    if(e.target.files.length > 1) {
+        alert('Vous ne pouvez pas upload plus d\'1 image à la fois');
+    }
+    else if(e.target.files[0].name.endsWith('.jpg') || e.target.files[0].name.endsWith('.png')) {
+        $('#fileForm').submit();
+    }
+    else {
+        alert('Vous ne pouvez envoyer que des photos');
+    }
+});

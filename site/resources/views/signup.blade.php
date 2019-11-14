@@ -60,3 +60,7 @@
     </div>
 
 @endsection
+
+@section('scripts')
+<script src="/assets/js/signup.js"></script>
+@endsection

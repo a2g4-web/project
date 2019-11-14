@@ -22,3 +22,7 @@
     </div>
 
 @endsection
+
+@section('scripts')
+<script src="/assets/js/events.js"></script>
+@endsection

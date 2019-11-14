@@ -183,5 +183,6 @@ class UsersController extends Controller
                 'authorization' => 'Bearer ' . Cookie::get('userToken')
             ]
         ]);
+        return back();
     }
 }
