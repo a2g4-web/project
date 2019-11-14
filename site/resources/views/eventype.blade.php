@@ -14,7 +14,7 @@
     <section class="my-5">
     <div class="card bg-white">
         <!-- Card header -->
-        <div class="card-header border-0 font-weight-bold whit bg-white">2 comments</div>
+        <div class="card-header border-0 font-weight-bold whit bg-white">Commentaires</div>
 
         <div class="media d-block d-md-flex mt-4">
 
@@ -31,11 +31,11 @@
                 <!-- Quick Reply -->
                 <form action="/api/addcom" method="post">
                 <div class="form-group mt-3">
-                    <label for="quickReplyFormComment">Your comment</label>
+                    <label for="quickReplyFormComment">Votre commentaire</label>
                     <textarea class="form-control" id="comment" name="commentaries" rows="5"></textarea>
 
                     <div class="text-center my-3">
-                        <button class="btn btn-primary btn-sm btn-elegant" type="submit">Post</button>
+                        <button class="btn btn-primary btn-sm btn-elegant" type="submit">Publier</button>
                     </div>
                 </div>
                 </form>
@@ -49,14 +49,14 @@
 
                 <!--First-->
                 <li class="page-item">
-                    <a class="page-link" style="color: white">First</a>
+                    <a class="page-link" style="color: white">Première</a>
                 </li>
 
                 <!--Arrow left-->
                 <li class="page-item">
-                    <a class="page-link" aria-label="Previous">
+                    <a class="page-link" aria-label="Previous" style="color: white">
                         <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only" style="color: white">Previous</span>
+                        <span class="sr-only" style="color: white">Precédente</span>
                     </a>
                 </li>
 
@@ -79,15 +79,15 @@
 
                 <!--Arrow right-->
                 <li class="page-item">
-                    <a class="page-link" aria-label="Next">
+                    <a class="page-link" aria-label="Next" style="color: white;">
                         <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only" style="color: white">Next</span>
+                        <span class="sr-only" style="color: white">Suivante</span>
                     </a>
                 </li>
 
                 <!--Last-->
                 <li class="page-item">
-                    <a class="page-link" style="color: white">Last</a>
+                    <a class="page-link" style="color: white">Dernière</a>
                 </li>
 
             </ul>
@@ -96,4 +96,10 @@
 
     </section>
     <!--Section: Comments-->
+
+    <div class="card my-4 text-center">
+        <div class="card-body">
+            <img src="">
+        </div>
+    </div>
 @endsection
