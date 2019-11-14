@@ -42,30 +42,8 @@
                             <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-lg-2 Product-img">
-                                    <img src="http://nicesnippets.com/demo/sc-KHIP6xxGLD-webres.jpg" alt="..." class="img-responsive"/>
-                                </div>
-                                <div class="col-lg-10">
-                                    <h4 class="nomargin">Iphone 6s</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td> 35,000 </td>
-                        <td data-th="Quantity">
-                            <input type="number" class="form-control text-center" value="1">
-                        </td>
-                        <td> 35,000 </td>
-                        <td class="actions" data-th="" style="width:10%;">
-                            <button class="btn btn-info btn-sm"><i class="fas fa-sync-alt"></i></button>
-                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                        </td>
-                    </tr>
                     </tbody>
+                    
                     <tfoot>
                     <tr>
                         <td><a href="#" class="btn btn-elegant waves-effect text-white"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
