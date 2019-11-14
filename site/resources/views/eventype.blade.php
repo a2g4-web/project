@@ -15,7 +15,15 @@
                         <h2 class="card-title">{{$data['name']}}</h2><br>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        <a href="#" class="btn btn-primary btn-elegant">Inscription</a>
+                        @if($participate == false)
+                            <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
+                        @else
+                            @if(\App\User::getUser() != null)
+                                <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
+                            @else
+                                <a href="#" class="btn btn-primary btn-elegant disabled">Vous devez être connecté pour participer</a>
+                            @endif
+                        @endif
                     </div>
                 </div>
                 <div class="row">
@@ -23,13 +31,13 @@
                         <h3 class="card-description">{{$data['description']}}</h3>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        @foreach($likes as $l)
-                            @if($l['id'] === \App\User::getUser()['id'])
-                                <a href="/api/like/{{$data['id']}}" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
-                            @else
+                        @if($likes == true)
+                            <a href="/api/like/{{$data['id']}}" class="red-text"><i class="fas fa-heart fa-2x"></i></a>
+                        @else
+                            @if(\App\User::getUser() != null)
                                 <a href="/api/like/{{$data['id']}}" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
                             @endif
-                        @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

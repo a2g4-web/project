@@ -39,5 +39,32 @@ module.exports = {
                res.status(404).json({error: 'No participants found'});
            }
         });
+    },
+    delete(req, res) {
+        var token = req.headers.authorization;
+        if(token != null) {
+            token = token.replace('Bearer ', '');
+            jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+                if(err) {
+                    res.status(500).json({error: 'Invalid token'});
+                }
+                else {
+                    var userId = decoded['userId'];
+                    var eventId = req.params.id;
+                    Participate.destroy({where: {eventId: eventId, userId: userId}})
+                        .then(result => {
+                            if(result[1]) {
+                                res.status(205).json({success: 'participation deleted'});
+                            }
+                            else {
+                                res.status(400).json({error: 'User already participate to this event'});
+                            }
+                        });
+                }
+            });
+        }
+        else {
+            res.status(400).json({error: 'token required'});
+        }
     }
 };

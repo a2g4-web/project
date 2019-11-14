@@ -165,4 +165,23 @@ class UsersController extends Controller
             ]
         ]);
     }
+
+    public function registerEvent($eventId)
+    {
+        $this->client->request('POST', '/api/event/' . $eventId . '/register', [
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+        return back();
+    }
+
+    public function unregisterEvent($eventId)
+    {
+        $this->client->request('DELETE', '/api/event/' . $eventId . '/unregister', [
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+    }
 }
