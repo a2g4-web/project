@@ -30,7 +30,7 @@ module.exports = {
         }
     },
     all(req, res) {
-        Likes.findAll({where: {imageId: req.params.id}}).then(results => {
+        Likes.findAll({where: {eventId: req.params.id}}).then(results => {
             if(results.length !== 0) {
                 res.status(200).send(results);
             }
