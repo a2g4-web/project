@@ -10,6 +10,7 @@ use GuzzleHttp\Exception\ServerException;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -29,7 +30,7 @@ class UsersController extends Controller
         $lastName = $req->input('last_name');
         $firstName = $req->input('first_name');
         $email = $req->input('email');
-        $pass = $req->input('password');
+        $pass = md5($req->input('password'));
         $loc = $req->input('location');
 
         try
@@ -55,7 +56,7 @@ class UsersController extends Controller
     public function login(Request $req)
     {
         $email = $req->input('email');
-        $pass = $req->input('password');
+        $pass = md5($req->input('password'));
 
         try
         {

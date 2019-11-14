@@ -361,6 +361,7 @@
       <workItem from="1573649804389" duration="10087000" />
       <workItem from="1573661792802" duration="1967000" />
       <workItem from="1573680594944" duration="5482000" />
+      <workItem from="1573719804879" duration="3867000" />
     </task>
     <servers />
   </component>
@@ -410,12 +411,16 @@
         <entry key="MAIN">
           <value>
             <State>
+<<<<<<< HEAD
+              <option name="COLUMN_ORDER" />
+=======
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
+>>>>>>> ad4ecdd09881e6e4756075e4a3268a081378077b
             </State>
           </value>
         </entry>
