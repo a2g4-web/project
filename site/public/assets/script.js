@@ -31,7 +31,7 @@ function writeEvent(event) {
         '                    <!-- Card image -->\n' +
         '                    <div class="view overlay">\n' +
         '                        <img class="px-auto" src="' + event.images[0].url + '" alt="Card image cap" height="350">\n' +
-        '                        <a href="#!">\n' +
+        '                        <a href="/events/' + event.id + '">\n' +
         '                            <div class="mask rgba-white-slight"></div>\n' +
         '                        </a>\n' +
         '                    </div>\n' +
@@ -139,3 +139,7 @@ function rotate(e){
         "transform": "rotateY("+currdeg+"deg)"
     });
 }
+
+$("#ModalWarning").on('hidden.bs.modal', function(){
+    alert("Hello World!");
+});

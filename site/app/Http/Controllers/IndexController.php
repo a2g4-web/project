@@ -42,7 +42,16 @@ class IndexController extends Controller
     }
 
     public function basket(Request $req) {
-
         return view('basket');
+    }
+
+    public function eventype($id){
+        $data = array();
+        $response = $this->client->request('GET', '/api/event/' . $id);
+        if($response->getStatusCode() === 200)
+        {
+            $data = json_decode($response->getBody(), true);
+        }
+        return view('eventype', ['data' => $data]);
     }
 }
