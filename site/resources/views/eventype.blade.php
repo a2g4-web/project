@@ -96,10 +96,5 @@
 
     </section>
     <!--Section: Comments-->
-
-    <div class="card my-4 text-center">
-        <div class="card-body">
-            <img src="">
-        </div>
-    </div>
+    
 @endsection
