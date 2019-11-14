@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     commentary: DataTypes.TEXT
   }, {});
   Commentaries.associate = function(models) {
-    Commentaries.belongsTo(models.images);
+    Commentaries.belongsTo(models.events);
     Commentaries.belongsTo(models.users);
   };
   return Commentaries;

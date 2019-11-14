@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Events.associate = function(models) {
     Events.hasMany(models.images);
     Events.hasMany(models.participate);
+    Events.hasMany(models.commentaries);
   };
   return Events;
 };
