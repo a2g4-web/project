@@ -17,7 +17,7 @@
         <h3 class="card-header border-0 font-weight-bold bg-white">Commentaires</h3>
 
         <div>
-            @foreach($)
+            
         </div>
 
         <div class="media d-block d-md-flex">
