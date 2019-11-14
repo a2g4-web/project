@@ -18,12 +18,12 @@
 
             <div class="container container_carousel">
                 <div class="carousel">
-                    <div class="item a">Barbecue<img src="assets/img/img_carousel/barbecue_c.jpg"></div>
-                    <div class="item b">Canoe <img src="assets/img/img_carousel/canoe_c.jpg"></div>
-                    <div class="item c">Challenge Watson<img src="assets/img/img_carousel/challenge_watson_c.jpg"></div>
-                    <div class="item d">Course Solidaire<img src="assets/img/img_carousel/course_solidaire_c.jpg"></div>
-                    <div class="item e">Don du Sang<img src="assets/img/img_carousel/don_du_sang_c.jpg"></div>
-                    <div class="item f">Portes ouvertes<img src="assets/img/img_carousel/portes_ouvertes_c.jpg"></div>
+                    <div class="item a">Barbecue<img src="/assets/img/img_carousel/barbecue_c.jpg"></div>
+                    <div class="item b">Canoe <img src="/assets/img/img_carousel/canoe_c.jpg"></div>
+                    <div class="item c">Challenge Watson<img src="/assets/img/img_carousel/challenge_watson_c.jpg"></div>
+                    <div class="item d">Course Solidaire<img src="/assets/img/img_carousel/course_solidaire_c.jpg"></div>
+                    <div class="item e">Don du Sang<img src="/assets/img/img_carousel/don_du_sang_c.jpg"></div>
+                    <div class="item f">Portes ouvertes<img src="/assets/img/img_carousel/portes_ouvertes_c.jpg"></div>
                 </div>
             </div>
         </div>
