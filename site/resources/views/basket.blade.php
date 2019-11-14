@@ -16,24 +16,19 @@
                             <th>Supprimer</th>
                         </tr>
                     </thead>
-
-                    @if(App\Basket::getBasket() != null)
-                        @foreach(App\Basket::getBasket() as $elem)
                             <tbody>
 
+                            <h3 class="text-white text-center">Le panier est vide</h3>
+
                             <tr>
-                                <th scope="row">{{$loop->iteration}}</th>
-                                <td><img width="100" class="img-fluid" src="{{$elem['url']}}" alt="iphone"></td>
-                                <td>{{$elem['name']}}</td>
-                                <td>{{$elem['price']}}€</td>
+                                <th scope="row"></th>
+                                <td><img width="100" class="img-fluid" src="" alt="iphone"></td>
+                                <td></td>
+                                <td></td>
                                 <td><a class="btn btn-danger" href="#"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
 
                             </tbody>
-                        @endforeach
-                    @else
-                        <h3 class="text-white text-center">Le panier est vide</h3>
-                    @endif
 
                     <tfoot>
                     <tr>
