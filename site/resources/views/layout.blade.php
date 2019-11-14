@@ -51,7 +51,11 @@
                                 <a class="dropdown-item" href="/api/logout">Déconnexion</a>
                             </div>
                         @else
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
+                        @if(\Illuminate\Support\Facades\Cookie::get('loginState') != 'error')
+                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
+                        @else
+                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion (échec)</a>
+                        @endif
                             <div class="dropdown-menu dropdown-menu-right">
                                 <form class="px-4 py-3" action="/api/login" method="post">
                                     <div class="form-group">
