@@ -122,34 +122,44 @@ class UsersController extends Controller
     }
 
     public function like($eventId) {
-        $like = $this->client->request('GET', '/api/event/' . $eventId . '/likes');
+        $like = null;
+        try {
+            $like = $this->client->request('GET', '/api/event/' . $eventId . '/likes');
+        }
+        catch (ClientException $e) {
+            $this->sendLike($eventId);
+            return back();
+        }
         $likes = array();
         if($like->getStatusCode() === 200) {
             $likes = json_decode($like->getBody());
         }
         foreach ($likes as $item) {
-            if($item['userId'] == User::getUser()['id'])
+            if($item->userId == User::getUser()['id'])
             {
                 $this->client->request('DELETE', '/api/like', [
                     'json' => [
-                        'userId' => User::getUser()['id'],
                         'eventId' => $eventId
                     ]
                 ]);
             }
             else
             {
-                $this->client->request('POST', '/api/like', [
-                    'json' => [
-                        'eventId' => $eventId
-                    ],
-                    'headers' => [
-                        'authorization' => Cookie::get('userToken')
-                    ]
-                ]);
+                $this->sendLike($eventId);
             }
             return back();
         }
         return back();
+    }
+
+    private function sendLike($eventId) {
+        $this->client->request('POST', '/api/like', [
+            'json' => [
+                'eventId' => $eventId
+            ],
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
     }
 }

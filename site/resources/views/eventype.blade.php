@@ -23,7 +23,7 @@
                         <h3 class="card-description">{{$data['description']}}</h3>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        <a href="#" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
+                        <a href="/api/like/{{$data['id']}}" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
                     </div>
                 </div>
             </div>
