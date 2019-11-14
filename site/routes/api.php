@@ -19,4 +19,4 @@ Route::get('/logout', 'UsersController@logout');
 Route::post('/addcom/{eventId}', 'UsersController@addcom');
 Route::get('/like/{eventId}', 'UsersController@like');
 Route::get('/registerevent/{eventId}', 'UsersController@registerEvent');
-Route::get('/unregisterevent{eventId}', 'UsersController@unregisterEvent');
+Route::get('/unregisterevent/{eventId}', 'UsersController@unregisterEvent');

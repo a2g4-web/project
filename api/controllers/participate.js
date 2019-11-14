@@ -53,7 +53,7 @@ module.exports = {
                     var eventId = req.params.id;
                     Participate.destroy({where: {eventId: eventId, userId: userId}})
                         .then(result => {
-                            if(result[1]) {
+                            if(result === 1) {
                                 res.status(205).json({success: 'participation deleted'});
                             }
                             else {
