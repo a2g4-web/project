@@ -122,6 +122,34 @@ class UsersController extends Controller
     }
 
     public function like($eventId) {
-        $like = $this->client->request('GET', '/api/likes');
+        $like = $this->client->request('GET', '/api/event/' . $eventId . '/likes');
+        $likes = array();
+        if($like->getStatusCode() === 200) {
+            $likes = json_decode($like->getBody());
+        }
+        foreach ($likes as $item) {
+            if($item['userId'] == User::getUser()['id'])
+            {
+                $this->client->request('DELETE', '/api/like', [
+                    'json' => [
+                        'userId' => User::getUser()['id'],
+                        'eventId' => $eventId
+                    ]
+                ]);
+            }
+            else
+            {
+                $this->client->request('POST', '/api/like', [
+                    'json' => [
+                        'eventId' => $eventId
+                    ],
+                    'headers' => [
+                        'authorization' => Cookie::get('userToken')
+                    ]
+                ]);
+            }
+            return back();
+        }
+        return back();
     }
 }

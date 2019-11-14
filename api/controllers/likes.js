@@ -11,9 +11,9 @@ module.exports = {
                     res.status(500).json({error: 'Invalid token'});
                 }
                 else {
-                    var imageId = req.params.id;
+                    var eventId = req.body.eventId;
                     var userId = decoded['userId'];
-                    Likes.findOrCreate({where: {imageId: imageId, userId: userId}, defaults: {imageId: imageId, userId: userId}})
+                    Likes.findOrCreate({where: {eventId: eventId, userId: userId}, defaults: {eventId: eventId, userId: userId}})
                         .then(result => {
                            if(result[1]) {
                                res.status(201).send(result[0]);
@@ -38,5 +38,16 @@ module.exports = {
                 res.status(404).json({error: 'no results found'});
             }
         });
+    },
+    delete(req, res) {
+        Likes.destroy({where: {userId: req.body.userId, eventId: req.body.eventId}})
+            .then(result => {
+               if(result === 1) {
+                   res.status(205).json({success: 'like deleted'});
+               }
+               else {
+                   res.status(500).json({error: 'no like found'})
+               }
+            });
     }
 };
