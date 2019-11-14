@@ -63,7 +63,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Close</button>
-                    @if(\App\User::getUser() != null)
+                    @if(\App\User::getUser() != null && $participate == true)
                         <form class="md-form" id="fileForm" method="POST" enctype="multipart/form-data" action="/api/uploadfile/{{$data['id']}}">
                             <div class="file-field">
                                 <div class="btn btn-primary btn-sm">

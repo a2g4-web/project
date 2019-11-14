@@ -96,3 +96,20 @@ footer
     top:0px;
     left:54px;
 }
+
+@media screen and (min-width: 768px)
+{
+    .btn-fix
+    {
+        position: fixed;
+        bottom: 1em;
+        right: 2em;
+    }
+
+    .btn-fix a
+    {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+}
