@@ -37,12 +37,12 @@
 
             <div class="container container_carousel">
                 <div class="carousel">
-                    <div class="test a">EcoCup <img src="assets/img/img_carousel/ecocup.jpg"></div>
-                    <div class="test b">Mug <img src="assets/img/img_carousel/mug.jpg"></div>
-                    <div class="test c">Pull <img src="assets/img/img_carousel/pull.jpg"></div>
-                    <div class="test d">Sac <img src="assets/img/img_carousel/sac.jpg"></div>
-                    <div class="test e">Balle <img src="assets/img/img_carousel/balle.jpg"></div>
-                    <div class="test f">Polo <img src="assets/img/img_carousel/polo.jpg"></div>
+                    <div class="test a">Coque d'Iphone <img src="assets/img/img_carousel/coque_c.jpg"></div>
+                    <div class="test b">Badges x5<img src="assets/img/img_carousel/badges_c.jpg"></div>
+                    <div class="test c">Mug <img src="assets/img/img_carousel/mug_c.jpg"></div>
+                    <div class="test d">Sac <img src="assets/img/img_carousel/sac_c.jpg"></div>
+                    <div class="test e">Pull <img src="assets/img/img_carousel/pull_c.jpg"></div>
+                    <div class="test f">Tapis de souris <img src="assets/img/img_carousel/gourde_c.jpg"></div>
                 </div>
             </div>
         </div>
