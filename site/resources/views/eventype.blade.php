@@ -71,7 +71,7 @@
                             <div class="file-field">
                                 <div class="btn btn-primary btn-sm">
                                     <span id="addFile">Ajouter</span>
-                                    <input type="file" id="fileInput" name="fileInput" hidden>
+                                    <input type="file" id="fileInput" name="fileInput">
                                 </div>
                             </div>
                         </form>

@@ -226,6 +226,20 @@ class UsersController extends Controller
                     'authorization' => Cookie::get('userToken')
                 ]
             ]);
+            $file = $req->file('fileInput');
+            if($file->isValid())
+            {
+                $file->storeAs('img', $file->getClientOriginalName());
+                $this->client->request('POST', '/api/image', [
+                    'headers' => [
+                        'authorization' => 'Bearer ' . Cookie::get('userToken')
+                    ],
+                    'json' => [
+                        'eventId' => $eventId,
+                        'url' => '/assets/img/' . $file->getClientOriginalName()
+                    ]
+                ]);
+            }
         }
         catch (ClientException $e)
         {

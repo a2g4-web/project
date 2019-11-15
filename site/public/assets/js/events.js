@@ -55,3 +55,19 @@ eventToHTML();
 $('#formSend').click(function () {
    $('#eventForm').submit();
 });
+
+$('#addFile').click(function () {
+    $('#fileInput').click();
+});
+
+$('#fileInput').change(function (e) {
+    if(e.target.files.length > 1) {
+        alert('Vous ne pouvez pas upload plus d\'1 image à la fois');
+    }
+    else if(e.target.files[0].name.endsWith('.jpg') || e.target.files[0].name.endsWith('.png')) {
+        $('#fileName').text(e.target.files[0].name);
+    }
+    else {
+        alert('Vous ne pouvez envoyer que des photos');
+    }
+});
