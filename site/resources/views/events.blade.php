@@ -60,7 +60,7 @@
                             <div class="file-field">
                                 <div class="btn btn-primary">
                                     <span id="addFile">Ajouter une image</span>
-                                    <input type="file" id="fileInput" hidden>
+                                    <input type="file" name="fileInput" id="fileInput" hidden>
                                 </div>
                                 <p id="fileName"></p>
                             </div>

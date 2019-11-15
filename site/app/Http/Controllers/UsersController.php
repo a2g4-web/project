@@ -214,7 +214,7 @@ class UsersController extends Controller
     public function addEvent(Request $req){
         try
         {
-            $this->client->request('POST', '/api/event', [
+            $response = $this->client->request('POST', '/api/event', [
                 'json' => [
                     'name' => $req->input('name'),
                     'description' => $req->input('description'),
@@ -226,6 +226,8 @@ class UsersController extends Controller
                     'authorization' => Cookie::get('userToken')
                 ]
             ]);
+            $rep = json_decode($response->getBody(), true);
+            $eventId = $rep['id'];
             $file = $req->file('fileInput');
             if($file->isValid())
             {
@@ -236,7 +238,7 @@ class UsersController extends Controller
                     ],
                     'json' => [
                         'eventId' => $eventId,
-                        'url' => '/assets/img/' . $file->getClientOriginalName()
+                        'url' => '/storage/assets/img/' . $file->getClientOriginalName()
                     ]
                 ]);
             }

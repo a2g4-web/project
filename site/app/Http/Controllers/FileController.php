@@ -30,7 +30,7 @@ class FileController extends Controller
                 ],
                 'json' => [
                     'eventId' => $eventId,
-                    'url' => '/assets/img/' . $file->getClientOriginalName()
+                    'url' => '/storage/assets/img/' . $file->getClientOriginalName()
                 ]
             ]);
         }
