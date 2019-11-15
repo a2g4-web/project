@@ -40,27 +40,15 @@ $('#fileInput').change(function (e) {
     }
 });
 
-
-function dlliste(){
+$('#downloadLink').click(function () {
     var url = window.location.href;
     var idStr = url.split('/')[4];
     var id = parseInt(idStr);
     $.ajax({
-        url:'http://minecloud.fr:8001/api/event/' + id + '/participants',
-        dataType: 'json',
-        type:'GET',
-        success:function(json){
-            var names = '';
-            var first_names = '';
-            var emails = '';
-            json.forEach(function(obj) {
-                names += obj.user.last_name + '\n';
-                first_names += obj.user.first_name + '\n';
-                emails += obj.user.email + '\n';
-                array($names, $first_names, $emails);
-            });
-            alert(names);
+        url: '/api/downloadlist/' + id,
+        type: 'GET',
+        complete: function () {
+            window.location.href = '/upload/participants.csv';
         }
     });
-
-}
+});
