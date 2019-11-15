@@ -47,6 +47,10 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="md-form text-center">
+                                <input type="checkbox" class="form-check-input" id="conditions" name="conditions">
+                                <label for="conditions">Accepter les conditions</label>
+                            </div>
 
                             <div class="text-center py-4">
                                 <button class="btn btn-elegant disabled" id="sbBtn" type="submit">Register</button>
