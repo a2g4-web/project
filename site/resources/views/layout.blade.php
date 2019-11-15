@@ -28,7 +28,7 @@
                     <div class="btn-group">
                         <a class="nav-link pr-0" href="{{url('/shop')}}"><i class="fas fa-shopping-bag"></i> Boutique</a>
                         <a class="nav-link dropdown-toggle pl-0" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                           aria-expanded="false">
                             <span class="sr-only">Toggle Dropdown</span>
                         </a>
                         <div class="dropdown-menu">
@@ -37,7 +37,7 @@
                             <a class="dropdown-item" id="type" href="#">Goodies</a>
                             @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
                                 <a class="dropdown-item text-center" id="showModal" href="#"><i class="fas fa-plus"></i></a>
-                            @endif
+                    @endif
 
                 </li>
                 <li class="nav-item @yield('active3')">
@@ -63,11 +63,11 @@
                                 <a class="dropdown-item" href="/api/logout">Déconnexion</a>
                             </div>
                         @else
-                        @if(\Illuminate\Support\Facades\Cookie::get('loginState') != 'error')
-                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
-                        @else
-                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion (échec)</a>
-                        @endif
+                            @if(\Illuminate\Support\Facades\Cookie::get('loginState') != 'error')
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
+                            @else
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion (échec)</a>
+                            @endif
                             <div class="dropdown-menu dropdown-menu-right">
                                 <form class="px-4 py-3" action="/api/login" method="post">
                                     <div class="form-group">
@@ -112,7 +112,7 @@
         </div>
     </div>
 
-@if (\Illuminate\Support\Facades\Cookie::get('allowCookies') == null)
+    @if (\Illuminate\Support\Facades\Cookie::get('allowCookies') == null)
         <div class="modal fade bottom" id="modalCookies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-frame modal-bottom" role="document">
                 <div class="modal-content">

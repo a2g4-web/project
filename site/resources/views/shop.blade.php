@@ -124,5 +124,5 @@
 @endsection
 
 @section('scripts')
-<script src="/assets/js/shop.js"></script>
+    <script src="/assets/js/shop.js"></script>
 @endsection
