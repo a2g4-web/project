@@ -256,13 +256,20 @@ class UsersController extends Controller
     }
 
     public function addArticle(Request $req){
+        $file = $req->file('fileInput');
+        if($file->isValid())
+        {
+            $file->storeAs('article', $file->getClientOriginalName());
+        }
         try
         {
-            $this->client->request('POST', 'api/article',[
+            $this->client->request('POST', '/api/article',[
                 'json' => [
                     'name' => $req->input('name'),
                     'description' => $req->input('description'),
                     'price' => $req->input('price'),
+                    'categoryId' => $req->input('categoryId'),
+                    'imageUrl' => '/storage/assets/article/' . $file->getClientOriginalName(),
                 ],
                 'headers' => [
                     'authorization' => Cookie::get('userToken')
@@ -272,6 +279,25 @@ class UsersController extends Controller
         catch (ClientException $e)
         {
             return redirect('/')->with('addArticleState', 'error');
+        }
+        return back();
+    }
+
+    public function addCategory(Request $req){
+        try
+        {
+            $this->client->request('POST', '/api/category',[
+                'json' => [
+                    'name' => $req->input('name'),
+                ],
+                'headers' => [
+                    'authorization' => Cookie::get('usetToken')
+                ]
+            ]);
+        }
+        catch (ClientException $e)
+        {
+            return redirect('/')->with('addCategoryState', 'error');
         }
         return back();
     }

@@ -35,8 +35,10 @@
                             <a class="dropdown-item" id="type" href="#">Vetements</a>
                             <a class="dropdown-item" id="type" href="#">Accessoires</a>
                             <a class="dropdown-item" id="type" href="#">Goodies</a>
-                        </div>
-                    </div>
+                            @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+                                <a class="dropdown-item text-center" id="showModal" href="#"><i class="fas fa-plus"></i></a>
+                            @endif
+
                 </li>
                 <li class="nav-item @yield('active3')">
                     <a class="nav-link" href="{{url('/events')}}"><i class="fas fa-calendar-alt"></i> Evènements</a>

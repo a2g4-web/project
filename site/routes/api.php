@@ -26,4 +26,5 @@ Route::get('/removefrombasket/{articleId}', 'UsersController@removeFromBasket');
 Route::get('/downloadlist/{eventId}', 'FileController@downloadParticipants');
 Route::post('/addevent', 'UsersController@addEvent');
 Route::get('/allowCookies', 'UsersController@allowCookies');
-Route::get('/addarticle', 'UsersController@addarticle');
+Route::post('/addarticle', 'UsersController@addarticle');
+Route::post('/addcategory', 'UsersController@addcategory');
