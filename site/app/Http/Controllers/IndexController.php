@@ -34,6 +34,11 @@ class IndexController extends Controller
         return view('events');
     }
 
+    public function cgv()
+    {
+        return view('cgv');
+    }
+
     public function signup() {
         $data = array();
         $response = $this->client->request('GET', '/api/campuses');
