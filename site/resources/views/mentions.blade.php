@@ -2,7 +2,7 @@
 
 @section('maincontent')
     <div class="row justify-content-center">
-    <div class="card col-md-11 my-5">
+    <div class="card col-md-11 my-5 py-5 px-5">
         <h1>Vos mentions légales :</h1>
     <h2>Informations légales</h2>
     <h3>1. Présentation du site.</h3>

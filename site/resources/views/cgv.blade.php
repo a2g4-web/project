@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('maincontent')
+    <div class="row justify-content-center">
+        <div class="card col-md-11 my-5 py-5 px-5">
     <h1>Conditions générales de vente des produits vendus sur BDE CESI</h1>
 
     Date de dernière mise à jour
@@ -136,4 +138,6 @@
 
     Les registres informatisés de la société <b>CESI</b> seront considérés par toutes les parties concernées comme preuve des communications, commandes, paiements et transactions intervenus entre les parties.
 
+        </div>
+    </div>
 @endsection
