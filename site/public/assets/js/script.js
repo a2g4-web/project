@@ -8,3 +8,8 @@ if($(document).width() < 768) {
 }
 
 $('#modalCookies').modal('show');
+
+$('#showModal').click(function () {
+    console.log('click');
+    $('#categoryModal').modal('show');
+});
