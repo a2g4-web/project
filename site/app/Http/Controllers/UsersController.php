@@ -210,4 +210,9 @@ class UsersController extends Controller
         }
         return back()->withCookie(cookie('basket', json_encode($new_articles), 1440));
     }
+
+    public function allowCookies()
+    {
+        return back()->withCookie(cookie('allowCookies', 'yes'));
+    }
 }
