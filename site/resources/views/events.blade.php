@@ -40,7 +40,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form action="#!" method="post">
+                        <form action="/api/addevent" method="post" id="eventForm">
                             <p class="h4 text-center">Ajouter un évènement</p>
                             <div class="md-form">
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'évènement">
@@ -58,7 +58,7 @@
                                 <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
                             </div>
                             <div class="md-form">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                                <input type="text" id="" name="" class="form-control" placeholder="Image de l'évènement">
                             </div>
 
                         </form>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-sm">Sauvegarder</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button>
                 </div>
             </div>
         </div>

@@ -210,4 +210,29 @@ class UsersController extends Controller
         }
         return back()->withCookie(cookie('basket', json_encode($new_articles), 1440));
     }
+
+    public function addEvent(Request $req){
+        try
+        {
+            $this->client->request('POST', '/api/event', [
+                'json' => [
+                    'name' => $req->input('name'),
+                    'description' => $req->input('description'),
+                    'location' => $req->input('location'),
+                    'date' => $req->input('date'),
+                    'price' => $req->input('price'),
+                ],
+                'headers' => [
+                    'authorization' => Cookie::get('userToken')
+                ]
+            ]);
+        }
+        catch (ClientException $e)
+        {
+            return redirect('/')->with('addEventState', 'error');
+        }
+        return back();
+    }
 }
+
+
