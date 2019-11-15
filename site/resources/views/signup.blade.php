@@ -47,9 +47,9 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="md-form text-center">
-                                <input type="checkbox" class="form-check-input" id="conditions" name="conditions">
-                                <label for="conditions">Accepter les conditions</label>
+                            <div class="mb-2 custom-control custom-checkbox text-center">
+                                <input type="checkbox" class="form-check-input custom-control-input" id="conditions" name="conditions">
+                                <label for="conditions" class="custom-control-label">Accepter les <a href="/cgv">conditions</a></label>
                             </div>
 
                             <div class="text-center py-4">
