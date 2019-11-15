@@ -15,6 +15,7 @@ class EncryptCookies extends Middleware
         'userToken',
         'user',
         'loginState',
-        'basket'
+        'basket',
+        'allowCookies'
     ];
 }

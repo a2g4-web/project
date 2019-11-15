@@ -32,9 +32,9 @@
                             <span class="sr-only">Toggle Dropdown</span>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Vetements</a>
-                            <a class="dropdown-item" href="#">Accessoires</a>
-                            <a class="dropdown-item" href="#">Goodies</a>
+                            <a class="dropdown-item" id="type" href="#">Vetements</a>
+                            <a class="dropdown-item" id="type" href="#">Accessoires</a>
+                            <a class="dropdown-item" id="type" href="#">Goodies</a>
                         </div>
                     </div>
                 </li>
@@ -77,7 +77,7 @@
                                         <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-dark" >Sign in</button>
+                                        <button type="submit" class="btn btn-dark" >Se connecter</button>
                                     </div>
                                     <div class="text-center pt-5">
                                         <p> Pas encore inscrit ?</p>
@@ -109,7 +109,25 @@
             <div><a href="https://www.linkedin.com/company/groupe-cesi/"><i class="fab fa-linkedin blue-text"></i></a></div>
         </div>
     </div>
+
+@if (\Illuminate\Support\Facades\Cookie::get('allowCookies') == null)
+        <div class="modal fade bottom" id="modalCookies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-frame modal-bottom" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <p class="pt-3 pr-2"> Voulez vous acepter l'utilisation des cookies sur ce site ?</p>
+                            <a class="btn btn-elegant" data-dismiss="modal" href="/api/allowCookies">Accepter</a>
+                            <button type="button" class="btn btn-elegant" data-dismiss="modal">Refuser</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>

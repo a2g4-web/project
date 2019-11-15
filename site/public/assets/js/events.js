@@ -51,3 +51,7 @@ var getEuro = function(price) {
 };
 
 eventToHTML();
+
+$('#formSend').click(function () {
+   $('#eventForm').submit();
+});
