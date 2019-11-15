@@ -22,7 +22,7 @@
                     <div class="md-form input-group col-md-2">
                         <input aria-label="Search" class="form-control" id="recherche" placeholder="Rechercher" type="text">
                         <div class="input-group-prepend">
-                            <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue"><i class="fas fa-search"></i></a></span>
+                            <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue" id="recherche-link"><i class="fas fa-search"></i></a></span>
                         </div>
                     </div>
                 </div>

@@ -105,10 +105,11 @@
         <div class="col-md-12 text-center">
             <a class="btn btn-elegant" href="/mentions">Mentions légales</a>
         </div>
+        <div class="row"
         <div style="font-size: 2rem;">
-            <div><a href="https://www.facebook.com/BDECESIARRAS" class="list-group-item-action"><i class="fab fa-facebook-square blue-text"></i></a></div>
-            <div><a href="https://twitter.com/BDE_Exia_Arras"><i class="fab fa-twitter blue-text"></i></a></div>
-            <div><a href="https://www.linkedin.com/company/groupe-cesi/"><i class="fab fa-linkedin blue-text"></i></a></div>
+            <div><a href="https://www.facebook.com/BDECESIARRAS" class="list-group-item-action"><i class="fab fa-facebook-square white-text"></i></a></div>
+            <div><a href="https://twitter.com/BDE_Exia_Arras"><i class="fab fa-twitter white-text"></i></a></div>
+            <div><a href="https://www.linkedin.com/company/groupe-cesi/"><i class="fab fa-linkedin white-text"></i></a></div>
         </div>
     </div>
 
