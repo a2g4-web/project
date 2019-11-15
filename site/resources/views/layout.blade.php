@@ -102,8 +102,8 @@
 
 <footer class="bg-dark">
     <div class="container-fluid">
-        <div class="col-md-12">
-            <p class="text-light">Test mentions légales</p>
+        <div class="col-md-12 text-center">
+            <a class="btn btn-elegant" href="/mentions">Mentions légales</a>
         </div>
         <div style="font-size: 2rem;">
             <div><a href="https://www.facebook.com/BDECESIARRAS" class="list-group-item-action"><i class="fab fa-facebook-square blue-text"></i></a></div>

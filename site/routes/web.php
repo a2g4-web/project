@@ -18,3 +18,5 @@ Route::get('/events', 'IndexController@events');
 Route::get('/signup', 'IndexController@signup');
 Route::get('/basket', 'IndexController@basket');
 Route::get('/events/{id}', 'IndexController@eventype');
+Route::get('/cgv', 'IndexController@cgv');
+Route::get('/mentions', 'IndexController@mentions');
