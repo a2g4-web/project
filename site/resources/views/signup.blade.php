@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="container">
                         <form action="/api/register" method="post">
-                            <p class="h4 text-center">Sign up</p>
+                            <p class="h4 text-center">Se connecter</p>
 
                             <div class="md-form">
                                 <i class="fa fa-user prefix grey-text"></i>

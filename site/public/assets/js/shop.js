@@ -17,7 +17,7 @@ var shopToHTML = function () {
 function writeArticle(article) {
     var select = $('.articles');
     select.html(select.html() +
-        '                <div class="col-md-4 col-lg-3 col-sm-12 pb-4">\n' +
+        '                <div class="col-md-4 col-lg-3 col-sm-12 pb-4 product ">\n' +
         '                    <div class="card card-cascade narrower card-ecommerce">\n' +
         '                        <!-- Card image -->\n' +
         '                        <div class="view overlay">\n' +
@@ -70,4 +70,20 @@ var liste = [
 
 $('#recherche').autocomplete({
     source : liste
+});
+
+
+$('#type').click(function (getType) {
+    $(".product").forEach(function (e) {
+        if (e != 1){
+            $('#delete').removeAttribute('hidden');
+        }
+        else if (categoryId != 2){
+            $('#delete').removeAttribute('hidden');
+        }
+        else if (categoryId != 3) {
+            $('#delete').removeAttribute('hidden');
+        }
+    });
+
 });
