@@ -17,7 +17,7 @@ var shopToHTML = function () {
 function writeArticle(article) {
     var select = $('.articles');
     select.html(select.html() +
-        '                <div class="col-md-4 col-lg-3 col-sm-12 pb-4 product ">\n' +
+        '                <div class="col-md-4 col-lg-3 col-sm-12 pb-4 product-' + article.name.replaceAll(' ', '').replaceAll('\'', '') + '">\n' +
         '                    <div class="card card-cascade narrower card-ecommerce">\n' +
         '                        <!-- Card image -->\n' +
         '                        <div class="view overlay">\n' +
@@ -31,7 +31,7 @@ function writeArticle(article) {
         '                        <div class="card-body card-body-cascade text-center">\n' +
         '                            <!-- Category & Title -->\n' +
         '\n' +
-        '                            <h4 class="card-title">' + article.name +' <\h4>\n' +
+        '                            <h4 class="card-title card-name">' + article.name +' <\h4>\n' +
         '\n' +
         '                            <!-- Description -->\n' +
         '                            <p class="card-text">' + article.description +'<\p>\n' +
@@ -45,45 +45,64 @@ function writeArticle(article) {
 
 shopToHTML();
 
-var liste = [
-    "Badges",
-    "Bandana",
-    "Verre Coktail",
-    "Bonnet",
-    "Casquette",
-    "Coque Iphone",
-    "Coque Samsung",
-    "Dessous de Verre",
-    "Gourde",
-    "Tasse Inox",
-    "Nounours",
-    "Sac en tissu",
-    "Sac à Corde",
-    "Sac en Bandoulière",
-    "Tablier",
-    "Taie d'Oreiller",
-    "Tapis de Souris",
-    "Tasse en Verre",
-    "Sweat",
-    "Pull"
-];
+var liste = [];
 
-$('#recherche').autocomplete({
-    source : liste
+$.ajax({
+   url: 'http://minecloud.fr:8001/api/articles',
+   type: 'GET',
+   dataType: 'json',
+   success: function (json) {
+       json.forEach(function (e) {
+          liste.push(e.name);
+       });
+       $('#recherche').autocomplete({
+           source : liste
+       });
+   }
 });
 
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this;
+  return target.replace(new RegExp(search, 'g'), replacement);
+};
 
-$('#type').click(function (getType) {
-    $(".product").forEach(function (e) {
-        if (e != 1){
-            $('#delete').removeAttribute('hidden');
+$('#recherche-link').click(function () {
+    $('.card-name').each(function (e) {
+        var name = $(this).text();
+        if($('#recherche').val() === '') {
+            $('.product-' + name.replaceAll(' ', '').replaceAll('\'', '')).show();
         }
-        else if (categoryId != 2){
-            $('#delete').removeAttribute('hidden');
+        else if(name.replaceAll(' ', '') !== $('#recherche').val().replaceAll(' ', ''))
+        {
+            console.log(name.replaceAll(' ', ''));
+            $('.product-' + name.replaceAll(' ', '').replaceAll('\'', '')).hide();
         }
-        else if (categoryId != 3) {
-            $('#delete').removeAttribute('hidden');
+        else {
+            $('.product-' + name.replaceAll(' ', '').replaceAll('\'', '')).show();
         }
     });
+});
 
+$('#formSend').click(function () {
+    $('#articleForm').submit();
+});
+
+$('#addFile').click(function () {
+    $('#fileInput').click();
+});
+
+$('#fileInput').change(function (e) {
+    if(e.target.files.length > 1) {
+        alert('Vous ne pouvez pas upload plus d\'1 image à la fois');
+    }
+    else if(e.target.files[0].name.endsWith('.jpg') || e.target.files[0].name.endsWith('.png')) {
+        $('#fileName').text(e.target.files[0].name);
+    }
+    else {
+        alert('Vous ne pouvez envoyer que des photos');
+    }
+});
+
+$('#formSends').click(function () {
+    $('#categoryForm').submit();
 });

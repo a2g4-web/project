@@ -22,7 +22,7 @@
                     <div class="md-form input-group col-md-2">
                         <input aria-label="Search" class="form-control" id="recherche" placeholder="Rechercher" type="text">
                         <div class="input-group-prepend">
-                            <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue"><i class="fas fa-search"></i></a></span>
+                            <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue" id="recherche-link"><i class="fas fa-search"></i></a></span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form action="/api/addarticle" method="post" id="articleForm">
+                        <form action="/api/addarticle" enctype="multipart/form-data" method="post" id="articleForm">
                             <p class="h4 text-center">Ajouter un article</p>
                             <div class="md-form">
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'article">
@@ -67,6 +67,16 @@
                             </div>
                             <div class="md-form">
                                 <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                            </div>
+                            <div class="md-form">
+                                <input type="text" id="categoryId" name="categoryId" class="form-control" placeholder="Catégorie de l'article">
+                            </div>
+                            <div class="file-field">
+                                <div class="btn btn-primary">
+                                    <span id="addFile">Ajouter une image</span>
+                                    <input type="file" name="fileInput" id="fileInput" hidden>
+                                </div>
+                                <p id="fileName"></p>
                             </div>
 
                         </form>
@@ -78,6 +88,36 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <!-- Change class .modal-sm to change the size of the modal -->
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Ajout catégorie</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="/api/addcategory" enctype="multipart/form-data" method="post" id="categoryForm">
+                            <p class="h4 text-center">Ajouter une catégorie</p>
+                            <div class="md-form">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de la catégorie">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="formSends">Sauvegarder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
 
