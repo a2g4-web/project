@@ -32,9 +32,9 @@
                             <span class="sr-only">Toggle Dropdown</span>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Vetements</a>
-                            <a class="dropdown-item" href="#">Accessoires</a>
-                            <a class="dropdown-item" href="#">Goodies</a>
+                            <a class="dropdown-item" id="type" href="#">Vetements</a>
+                            <a class="dropdown-item" id="type" href="#">Accessoires</a>
+                            <a class="dropdown-item" id="type" href="#">Goodies</a>
                         </div>
                     </div>
                 </li>
@@ -77,7 +77,7 @@
                                         <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-dark" >Sign in</button>
+                                        <button type="submit" class="btn btn-dark" >Se connecter</button>
                                     </div>
                                     <div class="text-center pt-5">
                                         <p> Pas encore inscrit ?</p>
