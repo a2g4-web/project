@@ -39,6 +39,46 @@
         </div>
     </div>
 
+    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+        <div class="btn-fix text-center">
+            <a class="btn-floating btn-elegant btn-lg white-text" href="#" data-toggle="modal" data-target="#centralModalLg"><i class="fas fa-plus mt-3"></i></a>
+        </div>
+    @endif
+
+    <div class="modal fade" id="centralModalLg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <!-- Change class .modal-sm to change the size of the modal -->
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Ajout article</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="/api/addarticle" method="post" id="articleForm">
+                            <p class="h4 text-center">Ajouter un article</p>
+                            <div class="md-form">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'article">
+                            </div>
+                            <div class="md-form">
+                                <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'article">
+                            </div>
+                            <div class="md-form">
+                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @endsection

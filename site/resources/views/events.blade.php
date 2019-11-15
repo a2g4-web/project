@@ -40,7 +40,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form action="#!" method="post">
+                        <form class="md-form" action="/api/addevent" enctype="multipart/form-data" method="POST" id="eventForm">
                             <p class="h4 text-center">Ajouter un évènement</p>
                             <div class="md-form">
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'évènement">
@@ -57,8 +57,12 @@
                             <div class="md-form">
                                 <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
                             </div>
-                            <div class="md-form">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                            <div class="file-field">
+                                <div class="btn btn-primary">
+                                    <span id="addFile">Ajouter une image</span>
+                                    <input type="file" name="fileInput" id="fileInput" hidden>
+                                </div>
+                                <p id="fileName"></p>
                             </div>
 
                         </form>
@@ -66,7 +70,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-sm">Sauvegarder</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button>
                 </div>
             </div>
         </div>

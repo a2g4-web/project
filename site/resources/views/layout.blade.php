@@ -117,7 +117,7 @@
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center align-items-center">
                             <p class="pt-3 pr-2"> Voulez vous acepter l'utilisation des cookies sur ce site ?</p>
-                            <a class="btn btn-elegant" data-dismiss="modal" href="/api/allowCookies">Accepter</a>
+                            <a class="btn btn-elegant" href="/api/allowCookies">Accepter</a>
                             <button type="button" class="btn btn-elegant" data-dismiss="modal">Refuser</button>
                         </div>
                     </div>

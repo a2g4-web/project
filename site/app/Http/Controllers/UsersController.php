@@ -211,8 +211,70 @@ class UsersController extends Controller
         return back()->withCookie(cookie('basket', json_encode($new_articles), 1440));
     }
 
+    public function addEvent(Request $req){
+        try
+        {
+            $response = $this->client->request('POST', '/api/event', [
+                'json' => [
+                    'name' => $req->input('name'),
+                    'description' => $req->input('description'),
+                    'location' => $req->input('location'),
+                    'date' => $req->input('date'),
+                    'price' => $req->input('price'),
+                ],
+                'headers' => [
+                    'authorization' => Cookie::get('userToken')
+                ]
+            ]);
+            $rep = json_decode($response->getBody(), true);
+            $eventId = $rep['id'];
+            $file = $req->file('fileInput');
+            if($file->isValid())
+            {
+                $file->storeAs('img', $file->getClientOriginalName());
+                $this->client->request('POST', '/api/image', [
+                    'headers' => [
+                        'authorization' => 'Bearer ' . Cookie::get('userToken')
+                    ],
+                    'json' => [
+                        'eventId' => $eventId,
+                        'url' => '/storage/assets/img/' . $file->getClientOriginalName()
+                    ]
+                ]);
+            }
+        }
+        catch (ClientException $e)
+        {
+            return redirect('/')->with('addEventState', 'error');
+        }
+        return back();
+
+    }
     public function allowCookies()
     {
         return back()->withCookie(cookie('allowCookies', 'yes'));
     }
+
+    public function addArticle(Request $req){
+        try
+        {
+            $this->client->request('POST', 'api/article',[
+                'json' => [
+                    'name' => $req->input('name'),
+                    'description' => $req->input('description'),
+                    'price' => $req->input('price'),
+                ],
+                'headers' => [
+                    'authorization' => Cookie::get('userToken')
+                ]
+            ]);
+        }
+        catch (ClientException $e)
+        {
+            return redirect('/')->with('addArticleState', 'error');
+        }
+        return back();
+    }
 }
+
+
