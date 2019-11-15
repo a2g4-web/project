@@ -232,6 +232,11 @@ class UsersController extends Controller
             return redirect('/')->with('addEventState', 'error');
         }
         return back();
+
+    }
+    public function allowCookies()
+    {
+        return back()->withCookie(cookie('allowCookies', 'yes'));
     }
 }
 
