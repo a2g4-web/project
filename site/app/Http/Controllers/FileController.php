@@ -6,6 +6,7 @@ use App\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\File;
 
 class FileController extends Controller
 {
@@ -29,9 +30,29 @@ class FileController extends Controller
                 ],
                 'json' => [
                     'eventId' => $eventId,
-                    'url' => '/assets/img/' . $file->getClientOriginalName()
+                    'url' => '/storage/assets/img/' . $file->getClientOriginalName()
                 ]
             ]);
+        }
+        return back();
+    }
+
+    public function downloadParticipants($eventId)
+    {
+        $response = $this->client->request('GET', '/api/event/' . $eventId . '/participants');
+        if($response->getStatusCode() === 200)
+        {
+            $body = $response->getBody();
+            if($body != null)
+            {
+                $participants = json_decode($body, true);
+                $str = 'Prénom;Nom' . PHP_EOL;
+                foreach ($participants as $item)
+                {
+                    $str .= $item['user']['first_name'] . ';' . $item['user']['last_name'] . PHP_EOL;
+                }
+                File::put(public_path('/upload/participants.csv'), "\xEF\xBB\xBF" . $str);
+            }
         }
         return back();
     }

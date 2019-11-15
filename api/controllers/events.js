@@ -6,7 +6,7 @@ module.exports = {
         Events.findOrCreate({where: req.body, defaults: req.body})
             .then(result => {
                 if(result[1]) {
-                    res.status(201).send('event created');
+                    res.status(201).send(result[0]);
                 }
                 else {
                     res.status(400).send('event already exists');
