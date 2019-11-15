@@ -1,4 +1,5 @@
 const Participate = require('../models').participate;
+const Users = require('../models').users;
 
 const jwt = require('jsonwebtoken');
 
@@ -31,7 +32,7 @@ module.exports = {
         }
     },
     all(req, res) {
-        Participate.findAll({where: {eventId: req.params.id}}).then(results => {
+        Participate.findAll({where: {eventId: req.params.id}, include: [Users]}).then(results => {
            if(results.length !== 0) {
                res.status(200).send(results);
            }

@@ -37,7 +37,7 @@ function writeArticle(article) {
         '                            <p class="card-text">' + article.description +'<\p>\n' +
         '                            <!-- button --> \n'+
         '                            <p class="card-price">' + article.price +'€</p>\n' +
-        '                            <a href="#" class="btn btn-primary" id="article-btn-' + article.id + '">Mettre au panier<\a>\n' +
+        '                            <a href="/api/addtobasket/' + article.id + '" class="btn btn-primary" id="article-btn-' + article.id + '">Mettre au panier<\a>\n' +
         '                    </div>\n' +
         '                    <!-- Card -->\n' +
         '                </div>');

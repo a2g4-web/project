@@ -48,6 +48,16 @@
                         @if(\Illuminate\Support\Facades\Cookie::get('user') != null)
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{\App\User::getUser()['first_name']}} {{\App\User::getUser()['last_name']}}</a>
                             <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-header" href="#">
+                                    @if(\App\User::getUser()['usertypeId'] === 1)
+                                        Etudiant
+                                    @elseif(\App\User::getUser()['usertypeId'] === 2)
+                                        Membre BDE
+                                    @else
+                                        Staff CESI
+                                    @endif
+                                </a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/api/logout">Déconnexion</a>
                             </div>
                         @else

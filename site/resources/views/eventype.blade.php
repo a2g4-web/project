@@ -33,9 +33,15 @@
                     <div class="offset-md-2 col-md-3">
                         @if($likes == true)
                             <a href="/api/like/{{$data['id']}}" class="red-text"><i class="fas fa-heart fa-2x"></i></a>
+                            @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+                                <a href="#" class="text-dark ml-4"><i class="fas fa-download fa-2x"></i></a>
+                            @endif
                         @else
                             @if(\App\User::getUser() != null)
                                 <a href="/api/like/{{$data['id']}}" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
+                                @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+                                    <a href="#" class="text-dark ml-4"><i class="fas fa-download fa-2x"></i></a>
+                                @endif
                             @endif
                         @endif
                     </div>

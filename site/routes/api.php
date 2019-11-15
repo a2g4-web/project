@@ -21,3 +21,5 @@ Route::get('/like/{eventId}', 'UsersController@like');
 Route::get('/registerevent/{eventId}', 'UsersController@registerEvent');
 Route::get('/unregisterevent/{eventId}', 'UsersController@unregisterEvent');
 Route::post('/uploadfile/{eventId}', 'FileController@upload');
+Route::get('/addtobasket/{articleId}', 'UsersController@addToBasket');
+Route::get('/removefrombasket/{articleId}', 'UsersController@removeFromBasket');

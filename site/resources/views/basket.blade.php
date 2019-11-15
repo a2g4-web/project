@@ -9,33 +9,37 @@
 
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Photo</th>
-                            <th>Nom</th>
-                            <th>Prix</th>
-                            <th>Supprimer</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Supprimer</th>
                         </tr>
                     </thead>
                             <tbody>
 
-                            <h3 class="text-white text-center">Le panier est vide</h3>
-
-                            <tr>
-                                <th scope="row"></th>
-                                <td><img width="100" class="img-fluid" src="" alt="iphone"></td>
-                                <td></td>
-                                <td></td>
-                                <td><a class="btn btn-danger" href="#"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
+                            @if(\Illuminate\Support\Facades\Cookie::get('basket') != null)
+                                @foreach($articles as $article)
+                                    <tr>
+                                        <td><img width="100" class="img-fluid" src="{{$article['imageUrl']}}" alt="iphone"></td>
+                                        <td>{{$article['name']}}</td>
+                                        <td class="article-price">{{$article['price']}}€</td>
+                                        <td>1</td>
+                                        <td><a class="btn btn-danger" href="/api/removefrombasket/{{$article['id']}}"><i class="fas fa-trash-alt"></i></a></td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <h3 class="text-white text-center">Le panier est vide</h3>
+                            @endif
 
                             </tbody>
 
                     <tfoot>
                     <tr>
-                        <td><a href="#" class="btn btn-elegant waves-effect text-white"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td><a href="/shop" class="btn btn-elegant waves-effect text-white"><i class="fa fa-angle-left"></i> Continuer mes achats</a></td>
                         <td colspan="2" class="hidden-xs"></td>
-                        <td class="hidden-xs text-center" style="width:10%;"><strong>Total : 47,000</strong></td>
-                        <td><a href="#" class="btn btn-success btn-elegant"> Checkout<i class="fa fa-angle-right"></i></a></td>
+                        <td class="hidden-xs text-center" style="width:10%;"><strong id="totalArticle"></strong></td>
+                        <td><a href="#" class="btn btn-success btn-elegant">Paiement <i class="fa fa-angle-right"></i></a></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -45,6 +49,7 @@
 
 @endsection
 
-
-
+@section('scripts')
+<script src="/assets/js/basket.js"></script>
+@endsection
 

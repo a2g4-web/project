@@ -6,6 +6,7 @@ use App\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
@@ -43,8 +44,25 @@ class IndexController extends Controller
         return view('signup', ['data' => $data]);
     }
 
-    public function basket(Request $req) {
-        return view('basket');
+    public function basket() {
+        $response = $this->client->request('GET', '/api/articles');
+        $array = array();
+        if($response->getStatusCode() === 200)
+        {
+            $body = json_decode($response->getBody(), true);
+            $cookie = json_decode(Cookie::get('basket'), true);
+            if($body != null && $cookie != null)
+            {
+                foreach ($body as $item)
+                {
+                    if(in_array($item['id'], $cookie))
+                    {
+                        array_push($array, $item);
+                    }
+                }
+            }
+        }
+        return view('basket', ['articles' => $array]);
     }
 
     public function eventype($id){
