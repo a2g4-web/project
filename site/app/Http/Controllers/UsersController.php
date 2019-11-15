@@ -185,4 +185,29 @@ class UsersController extends Controller
         ]);
         return back();
     }
+
+    public function addToBasket($articleId)
+    {
+        $articles = json_decode(Cookie::get('basket'), true);
+        if($articles == null)
+        {
+            $articles = [];
+        }
+        array_push($articles, $articleId);
+        return back()->withCookie(cookie('basket', json_encode($articles), 1440));
+    }
+
+    public function removeFromBasket($articleId)
+    {
+        $articles = json_decode(Cookie::get('basket'), true);
+        $new_articles = [];
+        foreach ($articles as $item)
+        {
+            if($item !== $articleId)
+            {
+                array_push($new_articles, $item);
+            }
+        }
+        return back()->withCookie(cookie('basket', json_encode($new_articles), 1440));
+    }
 }
