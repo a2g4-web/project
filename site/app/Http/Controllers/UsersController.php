@@ -238,6 +238,27 @@ class UsersController extends Controller
     {
         return back()->withCookie(cookie('allowCookies', 'yes'));
     }
+
+    public function addArticle(Request $req){
+        try
+        {
+            $this->client->request('POST', 'api/article',[
+                'json' => [
+                    'name' => $req->input('name'),
+                    'description' => $req->input('description'),
+                    'price' => $req->input('price'),
+                ],
+                'headers' => [
+                    'authorization' => Cookie::get('userToken')
+                ]
+            ]);
+        }
+        catch (ClientException $e)
+        {
+            return redirect('/')->with('addArticleState', 'error');
+        }
+        return back();
+    }
 }
 
 
