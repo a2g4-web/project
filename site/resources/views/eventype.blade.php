@@ -15,7 +15,15 @@
                         <h2 class="card-title">{{$data['name']}}</h2><br>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        <a href="#" class="btn btn-primary btn-elegant">Inscription</a>
+                        @if($participate == false)
+                            @if(\App\User::getUser() == null)
+                                <a href="#" class="btn btn-primary btn-elegant disabled">Vous devez être connecté pour participer</a>
+                            @else
+                                <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
+                            @endif
+                        @else
+                            <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
@@ -23,7 +31,13 @@
                         <h3 class="card-description">{{$data['description']}}</h3>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        <a href="#" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
+                        @if($likes == true)
+                            <a href="/api/like/{{$data['id']}}" class="red-text"><i class="fas fa-heart fa-2x"></i></a>
+                        @else
+                            @if(\App\User::getUser() != null)
+                                <a href="/api/like/{{$data['id']}}" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
+                            @endif
+                        @endif
                     </div>
                 </div>
             </div>
@@ -36,15 +50,29 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title w-100" id="myModal">Galerie photos</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button>-->
                 </div>
                 <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row modal-img justify-content-center">
 
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Close</button>
+                    @if(\App\User::getUser() != null && $participate == true)
+                        <form class="md-form" id="fileForm" method="POST" enctype="multipart/form-data" action="/api/uploadfile/{{$data['id']}}">
+                            <div class="file-field">
+                                <div class="btn btn-primary btn-sm">
+                                    <span id="addFile">Ajouter</span>
+                                    <input type="file" id="fileInput" name="fileInput" hidden>
+                                </div>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

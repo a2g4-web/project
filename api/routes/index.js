@@ -82,8 +82,12 @@ module.exports = (app) => {
     app.delete('/api/event/:id', checkToken, eventsController.delete);
     app.get('/api/events', eventsController.all);
     app.post('/api/event/:id/register', participateController.create);
+    app.delete('/api/event/:id/unregister', participateController.delete);
     app.get('/api/event/:id/participants', participateController.all);
     app.get('/api/event/:id/likes', likesController.all);
+
+    app.delete('/api/like', likesController.delete);
+    app.post('/api/like', likesController.create);
 
     app.post('/api/commentary', checkToken, commentariesController.create);
     app.put('/api/commentary/:id', checkToken, commentariesController.update);

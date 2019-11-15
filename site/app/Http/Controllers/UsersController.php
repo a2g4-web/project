@@ -122,6 +122,67 @@ class UsersController extends Controller
     }
 
     public function like($eventId) {
-        $like = $this->client->request('GET', '/api/likes');
+        $like = null;
+        try {
+            $like = $this->client->request('GET', '/api/event/' . $eventId . '/likes');
+        }
+        catch (ClientException $e) {
+            $this->sendLike($eventId);
+            return back();
+        }
+        $likes = array();
+        if($like->getStatusCode() === 200) {
+            $likes = json_decode($like->getBody());
+        }
+        foreach ($likes as $item) {
+            if($item->userId == User::getUser()['id'])
+            {
+                $this->client->request('DELETE', '/api/like', [
+                    'json' => [
+                        'eventId' => $eventId
+                    ],
+                    'headers' => [
+                        'authorization' => 'Bearer ' . Cookie::get('userToken')
+                    ]
+                ]);
+            }
+            else
+            {
+                $this->sendLike($eventId);
+            }
+            return back();
+        }
+        return back();
+    }
+
+    private function sendLike($eventId) {
+        $this->client->request('POST', '/api/like', [
+            'json' => [
+                'eventId' => $eventId
+            ],
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+    }
+
+    public function registerEvent($eventId)
+    {
+        $this->client->request('POST', '/api/event/' . $eventId . '/register', [
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+        return back();
+    }
+
+    public function unregisterEvent($eventId)
+    {
+        $this->client->request('DELETE', '/api/event/' . $eventId . '/unregister', [
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+        return back();
     }
 }

@@ -21,4 +21,14 @@
         </div>
     </div>
 
+    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+        <div class="btn-fix text-center">
+            <a class="btn-floating btn-elegant btn-lg white-text"><i class="fas fa-plus mt-3"></i></a>
+        </div>
+    @endif
+
+@endsection
+
+@section('scripts')
+<script src="/assets/js/events.js"></script>
 @endsection

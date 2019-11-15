@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -58,9 +60,44 @@ class IndexController extends Controller
         {
             $comsData = json_decode($coms->getBody(), true);
         }
-        $imgData = array();
-        $imgs = $this->client->request('GET', '/api/images');
+        $participateObj = false;
+        try
+        {
+            $participate = $this->client->request('GET', '/api/event/' . $id . '/participants');
+            if($participate->getStatusCode() === 200)
+            {
+                $participateData = json_decode($participate->getBody(), true);
+                foreach ($participateData as $p)
+                {
+                    if($p['userId'] == User::getUser()['id'])
+                    {
+                        $participateObj = true;
+                    }
+                }
+            }
+        }
+        catch (ClientException $e)
+        {
 
-        return view('eventype', ['data' => $data, 'coms' => $comsData]);
+        }
+        $likeObj = false;
+        try {
+            $like = $this->client->request('GET', '/api/event/' . $id . '/likes');
+            if($like->getStatusCode() === 200)
+            {
+                $likesData = json_decode($like->getBody(), true);
+                foreach ($likesData as $l)
+                {
+                    if($l['userId'] == User::getUser()['id'])
+                    {
+                        $likeObj = true;
+                    }
+                }
+            }
+        }
+        catch (ClientException $e) {
+            return view('eventype', ['data' => $data, 'coms' => $comsData, 'likes' => $likeObj, 'participate' => $participateObj]);
+        }
+        return view('eventype', ['data' => $data, 'coms' => $comsData, 'likes' => $likeObj, 'participate' => $participateObj]);
     }
 }
