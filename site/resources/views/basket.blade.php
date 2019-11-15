@@ -9,11 +9,11 @@
 
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Photo</th>
-                            <th>Nom</th>
-                            <th>Prix</th>
-                            <th>Supprimer</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Supprimer</th>
                         </tr>
                     </thead>
                             <tbody>
@@ -21,10 +21,10 @@
                             <h3 class="text-white text-center">Le panier est vide</h3>
 
                             <tr>
-                                <th scope="row"></th>
-                                <td><img width="100" class="img-fluid" src="" alt="iphone"></td>
-                                <td></td>
-                                <td></td>
+                                <td><img width="100" class="img-fluid" src="/assets/img/img_carousel/balle.jpg" alt="iphone"></td>
+                                <td>Iphone</td>
+                                <td>40</td>
+                                <td>1</td>
                                 <td><a class="btn btn-danger" href="#"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
 

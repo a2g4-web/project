@@ -185,4 +185,14 @@ class UsersController extends Controller
         ]);
         return back();
     }
+
+    public function addToBasket($articleId)
+    {
+        $articles = Cookie::get('basket');
+        if($articles == null)
+        {
+            $articles = array();
+        }
+        array_push($articles, $articleId);
+    }
 }
