@@ -43,6 +43,11 @@
                 <li class="nav-item @yield('active3')">
                     <a class="nav-link" href="{{url('/events')}}"><i class="fas fa-calendar-alt"></i> Evènements</a>
                 </li>
+                <li class="nav-item @yield('active4')">
+                    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] != 2)
+                        <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Contact</a>
+                    @endif
+                </li>
             </div>
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item">
