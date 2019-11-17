@@ -107,7 +107,7 @@
 
 <footer class="bg-dark">
     <div class="container-fluid">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center text-light">
             <a class="btn btn-elegant" href="/mentions">Mentions légales</a>
         </div>
         <div class="row"

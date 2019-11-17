@@ -1,6 +1,7 @@
 body
 {
     background-color: #4B515D;
+    padding-bottom: 100px;
 }
 
 article p
@@ -24,6 +25,10 @@ footer p
 footer
 {
     margin-top: 25px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+
 }
 
 #campus
