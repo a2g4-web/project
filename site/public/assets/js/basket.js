@@ -6,4 +6,5 @@ $('.article-price').each(function (e) {
 
 console.log(total);
 
-$('#totalArticle').html('Total: ' + total + '€');
+$('#totalArticle').html('Total: ' + total + '€'); // Function to calcul the total price of the basket
+

@@ -7,7 +7,7 @@ if($(document).width() < 768) {
     $('.dropdown-menu-right').removeClass('dropdown-menu-right');
 }
 
-$('#modalCookies').modal('show');
+$('#modalCookies').modal('show'); // Show rhe window to ask to accept the cookies
 
 $('#showModal').click(function () {
     console.log('click');
