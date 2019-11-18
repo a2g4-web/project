@@ -3,6 +3,10 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
+function compare(a, b) {
+    return a['price'] - b['price'];
+}
+
 var shopToHTML = function () {
     $.ajax({
         url: 'http://minecloud.fr:8001/api/articles',
@@ -50,9 +54,26 @@ function writeArticle(article) {
 
 console.log($('.articles').text());
 
-if($('.articles').text().replaceAll('\n', '').replaceAll(' ', '') === '')
-{
+if($('.articles').text().replaceAll('\n', '').replaceAll(' ', '') === '') {
     shopToHTML();
+}
+
+function sortByPrice() {
+    $('.articles').html('');
+    $.ajax({
+        url: 'http://minecloud.fr:8001/api/articles',
+        type: 'GET',
+        dataType: 'json',
+        success: function (json, statut) {
+            json.sort(compare);
+            json.forEach(function (obj) {
+                writeArticle(obj);
+            });
+        },
+        error: function (resultat, statut) {
+            console.log(resultat + ': ' + statut);
+        }
+    });
 }
 
 var liste = [];
