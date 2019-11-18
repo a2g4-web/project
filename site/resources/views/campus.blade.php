@@ -37,6 +37,7 @@
                     <h1 class="card-title">+ de 1500 formations & modules sont enseignés sur nos 25 campus</h1>
                 </div>
                     </div>
+                </div>
             </div>
     </div>
     </div>

@@ -15,14 +15,14 @@
                         <h2 class="card-title">{{$data['name']}}</h2><br>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        @if($participate == false)
-                            @if(\App\User::getUser() == null)
-                                <a href="#" class="btn btn-primary btn-elegant disabled">Vous devez être connecté pour participer</a>
-                            @else
+                        @if(\App\User::getUser() != null)
+                            @if($participate == false)
                                 <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
+                            @else
+                                <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
                             @endif
                         @else
-                            <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
+                            <a href="#" class="btn btn-primary btn-elegant disabled">Vous devez être connecté pour participer</a>
                         @endif
                     </div>
                 </div>
