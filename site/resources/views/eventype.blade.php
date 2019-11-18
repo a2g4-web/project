@@ -86,45 +86,45 @@
 
     <!--Section: Comments-->
     <section class="my-5">
-    <div class="card bg-white">
-        <!-- Card header -->
-        <h3 class="card-header border-0 font-weight-bold bg-white text-center pt-4">Commentaires</h3>
+        <div class="card bg-white">
+            <!-- Card header -->
+            <h3 class="card-header border-0 font-weight-bold bg-white text-center pt-4">Commentaires</h3>
 
-        <div class="mt-3">
-            <ul class="list-group">
-            @foreach($coms as $commentary)
-                @if($commentary['eventId'] === $data['id'])
-                    <li class="list-group-item">
-                        <div class="md-v-line"></div><i class="fas fa-comments mr-4"></i> <span style="font-weight: bold;">{{$commentary['user']['first_name']}} {{$commentary['user']['last_name']}}:</span> {{$commentary['commentary']}}
-                    </li>
-                @endif
-            @endforeach
-            </ul>
-        </div>
-
-        <div class="media d-block d-md-flex">
-            <div class="media-body text-center text-md-left ml-md-3 ml-0 text-dark">
-                <form action="/api/addcom/{{$data['id']}}" method="post">
-                <div class="form-group mt-3">
-                    <label for="quickReplyFormComment">Votre commentaire</label>
-                    <textarea class="form-control" id="comment" name="commentaries" rows="5"></textarea>
-
-                    <div class="text-center my-3">
-                        @if(\App\User::getUser() != null)
-                            <button class="btn btn-primary btn-sm btn-elegant" type="submit">Publier</button>
-                        @else
-                            <button class="btn btn-primary btn-sm btn-elegant disabled" type="submit">Vous devez être connecté pour publier un commentaire</button>
+            <div class="mt-3">
+                <ul class="list-group">
+                    @foreach($coms as $commentary)
+                        @if($commentary['eventId'] === $data['id'])
+                            <li class="list-group-item">
+                                <div class="md-v-line"></div><i class="fas fa-comments mr-4"></i> <span style="font-weight: bold;">{{$commentary['user']['first_name']}} {{$commentary['user']['last_name']}}:</span> {{$commentary['commentary']}}
+                            </li>
                         @endif
-                    </div>
-                    <div class="text-center my-2">
-                        @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
-                            <a class="red-text" href="/api/event/remove/{{$data['id']}}" style="text-decoration: underline;">Supprimer l'évènement</a>
-                        @endif
-                    </div>
-                </div>
-                </form>
+                    @endforeach
+                </ul>
             </div>
-        </div>
+
+            <div class="media d-block d-md-flex">
+                <div class="media-body text-center text-md-left ml-md-3 ml-0 text-dark">
+                    <form action="/api/addcom/{{$data['id']}}" method="post">
+                        <div class="form-group mt-3">
+                            <label for="quickReplyFormComment">Votre commentaire</label>
+                            <textarea class="form-control" id="comment" name="commentaries" rows="5"></textarea>
+
+                            <div class="text-center my-3">
+                                @if(\App\User::getUser() != null)
+                                    <button class="btn btn-primary btn-sm btn-elegant" type="submit">Publier</button>
+                                @else
+                                    <button class="btn btn-primary btn-sm btn-elegant disabled" type="submit">Vous devez être connecté pour publier un commentaire</button>
+                                @endif
+                            </div>
+                            <div class="text-center my-2">
+                                @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+                                    <a class="red-text" href="/api/event/remove/{{$data['id']}}" style="text-decoration: underline;">Supprimer l'évènement</a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <!--Section: Comments-->
