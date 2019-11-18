@@ -9,6 +9,7 @@ const eventsController = controller.events;
 const commentariesController = controller.commentaries;
 const participateController = controller.participate;
 const likesController = controller.likes;
+const boughtController = controller.bought;
 
 const jwt = require('jsonwebtoken');
 
@@ -95,4 +96,6 @@ module.exports = (app) => {
     app.get('/api/commentary/:id', commentariesController.get);
     app.delete('/api/commentary/:id', checkToken, commentariesController.delete);
     app.get('/api/commentaries', commentariesController.all);
+
+    app.get('/api/bought', boughtController.all);
 };

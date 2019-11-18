@@ -143,3 +143,23 @@ $.ajax({
         });
     }
 });
+
+function sortByBest() {
+    var a = [];
+    var b = [];
+    $.ajax({
+        url: 'http://minecloud.fr:8001/api/bought',
+        type: 'GET',
+        dataType: 'json',
+        success: function (json) {
+            for(var i = 0; i < json.length; i++) {
+                b.push(0);
+            }
+            for(var j = 0; j < json.length; j++) {
+                b[j]++;
+            }
+            b.sort();
+            console.log(b);
+        }
+    });
+}
