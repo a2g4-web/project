@@ -47,7 +47,7 @@
                     @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 1)
                         <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Envoyer une idée </a> <!--Link to send an idea to the bde-->
                     @elseif(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 3)
-                        <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Signaler un contenu</a> <!--Link to send a probleme to the bde-->
+                        <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Signaler un contenu</a> <!--Link to send a problem to the bde-->
                     @endif
                 </li>
             </div>
@@ -67,11 +67,11 @@
                                     @endif
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/api/logout">Déconnexion</a> <!--Button to deconnect the user-->
+                                <a class="dropdown-item" href="/api/logout">Déconnexion</a> <!--Button to disconnect the user-->
                             </div>
                         @else
                             @if(\Illuminate\Support\Facades\Cookie::get('loginState') != 'error')
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a> // Button to open the form of the connexion
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a> <!--Button to open the form of the connexion-->
                             @else
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion (échec)</a>
                             @endif
