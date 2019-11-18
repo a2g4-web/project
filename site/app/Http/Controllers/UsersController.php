@@ -291,7 +291,7 @@ class UsersController extends Controller
                     'name' => $req->input('name'),
                 ],
                 'headers' => [
-                    'authorization' => Cookie::get('usetToken')
+                    'authorization' => Cookie::get('userToken')
                 ]
             ]);
         }
