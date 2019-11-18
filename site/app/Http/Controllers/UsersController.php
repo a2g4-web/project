@@ -238,7 +238,7 @@ class UsersController extends Controller
                     ],
                     'json' => [
                         'eventId' => $eventId,
-                        'url' => '/storage/assets/img/' . $file->getClientOriginalName()
+                        'url' => '/assets/img/' . $file->getClientOriginalName()
                     ]
                 ]);
             }
@@ -301,6 +301,15 @@ class UsersController extends Controller
         }
         return back();
     }
-}
 
+    public function removeEvent($eventId)
+    {
+        $this->client->request('DELETE', '/api/event/' . $eventId, [
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+        return redirect('/events');
+    }
+}
 

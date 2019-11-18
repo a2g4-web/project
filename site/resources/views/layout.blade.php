@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
     <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="/assets/logo.png">
     <title> BDE CESI</title>
 </head>
 <body>
