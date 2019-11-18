@@ -301,6 +301,16 @@ class UsersController extends Controller
         }
         return back();
     }
+
+    public function removeEvent($eventId)
+    {
+        $this->client->request('DELETE', '/api/event/' . $eventId, [
+            'headers' => [
+                'authorization' => 'Bearer ' . Cookie::get('userToken')
+            ]
+        ]);
+        return back();
+    }
 }
 
 

@@ -116,6 +116,11 @@
                             <button class="btn btn-primary btn-sm btn-elegant disabled" type="submit">Vous devez être connecté pour publier un commentaire</button>
                         @endif
                     </div>
+                    <div class="text-center my-2">
+                        @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+                            <a class="red-text" href="/api/event/remove/{{$data['id']}}" style="text-decoration: underline;">Supprimer l'évènement</a>
+                        @endif
+                    </div>
                 </div>
                 </form>
             </div>
