@@ -8,6 +8,7 @@ const events = require('./events');
 const commentaries = require('./commentaries');
 const participate = require('./participate');
 const likes = require('./likes');
+const bought = require('./bought');
 
 module.exports = {
     categories,
@@ -19,5 +20,6 @@ module.exports = {
     events,
     commentaries,
     participate,
-    likes
+    likes,
+    bought
 };

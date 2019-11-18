@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING
   }, {});
   Users.associate = function(models) {
-    Users.belongsToMany(models.articles, {through: 'bought'});
+    Users.hasMany(models.bought);
     Users.hasMany(models.likes);
     Users.hasMany(models.participate);
     Users.belongsTo(models.usertypes);
