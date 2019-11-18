@@ -14,3 +14,13 @@ $('#showModal').click(function () {
     $('#categoryModal').modal('show');
 });
 
+$.ajax({
+    url: 'http://minecloud.fr:8001/api/categories',
+    type: 'GET',
+    dataType: 'json',
+    success: function (json) {
+        json.forEach(function (item) {
+            $('#dropdownGoodies').prepend('<a class="dropdown-item" id="type" href="/shop/' + item.name + '">' + item.name + '</a>');
+        });
+    }
+});
