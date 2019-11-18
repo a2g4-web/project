@@ -66,10 +66,15 @@
                                 <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'article">
                             </div>
                             <div class="md-form">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'article">
                             </div>
-                            <div class="md-form">
-                                <input type="text" id="categoryId" name="categoryId" class="form-control" placeholder="Catégorie de l'article">
+                            <div class=md-form">
+                            <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId">
+                                <option value="" disabled="" selected="">Séléctionner la catégorie</option>
+                                <option value="1">Vêtements</option>
+                                <option value="2">Accessoire</option>
+                                <option value="3">Goodies</option>
+                            </select>
                             </div>
                             <div class="file-field">
                                 <div class="btn btn-primary">
