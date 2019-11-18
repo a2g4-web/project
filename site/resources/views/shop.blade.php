@@ -92,9 +92,6 @@
                             <div class=md-form">
                             <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId">
                                 <option value="" disabled="" selected="">Séléctionner la catégorie</option>
-                                <option value="1">Vêtements</option>
-                                <option value="2">Accessoire</option>
-                                <option value="3">Goodies</option>
                             </select>
                             </div>
                             <div class="file-field">

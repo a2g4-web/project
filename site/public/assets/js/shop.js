@@ -111,3 +111,14 @@ $('#fileInput').change(function (e) {
 $('#formSends').click(function () {
     $('#categoryForm').submit();
 });
+
+$.ajax({
+    url: 'http://minecloud.fr:8001/api/categories',
+    type: 'GET',
+    dataType: 'json',
+    success: function (json) {
+        json.forEach(function (item) {
+            $('#categoryId').append('<option value="' + item.id + '">' + item.name + '</option>');
+        });
+    }
+});
