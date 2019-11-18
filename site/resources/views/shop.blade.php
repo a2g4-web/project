@@ -8,8 +8,6 @@
 
 @section('maincontent')
 
-
-
     <section class="text-center my-4">
 
         <div class="card">
