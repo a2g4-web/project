@@ -269,7 +269,7 @@ class UsersController extends Controller
                     'description' => $req->input('description'),
                     'price' => $req->input('price'),
                     'categoryId' => $req->input('categoryId'),
-                    'imageUrl' => '/storage/assets/article/' . $file->getClientOriginalName(),
+                    'imageUrl' => '/assets/article/' . $file->getClientOriginalName(),
                 ],
                 'headers' => [
                     'authorization' => Cookie::get('userToken')
