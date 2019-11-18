@@ -8,31 +8,31 @@
                 <table class="table bg-white">
 
                     <thead>
-                        <tr>
-                            <th scope="col">Photo</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prix</th>
-                            <th scope="col">Quantité</th>
-                            <th scope="col">Supprimer</th>
-                        </tr>
+                    <tr>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
                     </thead>
-                            <tbody>
+                    <tbody>
 
-                            @if(\Illuminate\Support\Facades\Cookie::get('basket') != null)
-                                @foreach($articles as $article)
-                                    <tr>
-                                        <td><img width="100" class="img-fluid" src="{{$article['imageUrl']}}" alt="iphone"></td>
-                                        <td>{{$article['name']}}</td>
-                                        <td class="article-price">{{$article['price']}}€</td>
-                                        <td>1</td>
-                                        <td><a class="btn btn-danger" href="/api/removefrombasket/{{$article['id']}}"><i class="fas fa-trash-alt"></i></a></td>
-                                    </tr>
-                                @endforeach
-                            @else
-                                <h3 class="text-white text-center">Le panier est vide</h3>
-                            @endif
+                    @if(\Illuminate\Support\Facades\Cookie::get('basket') != null)
+                        @foreach($articles as $article)
+                            <tr>
+                                <td><img width="100" class="img-fluid" src="{{$article['imageUrl']}}" alt="iphone"></td>
+                                <td>{{$article['name']}}</td>
+                                <td class="article-price">{{$article['price']}}€</td>
+                                <td>1</td>
+                                <td><a class="btn btn-danger" href="/api/removefrombasket/{{$article['id']}}"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <h3 class="text-white text-center">Le panier est vide</h3>
+                    @endif
 
-                            </tbody>
+                    </tbody>
 
                     <tfoot>
                     <tr>
@@ -50,6 +50,6 @@
 @endsection
 
 @section('scripts')
-<script src="/assets/js/basket.js"></script>
+    <script src="/assets/js/basket.js"></script>
 @endsection
 

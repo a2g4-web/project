@@ -93,9 +93,9 @@
                                 <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'article">
                             </div>
                             <div class=md-form">
-                            <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId">
-                                <option value="" disabled="" selected="">Séléctionner la catégorie</option>
-                            </select>
+                                <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId">
+                                    <option value="" disabled="" selected="">Séléctionner la catégorie</option>
+                                </select>
                             </div>
                             <div class="file-field">
                                 <div class="btn btn-primary">

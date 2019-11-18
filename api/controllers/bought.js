@@ -1,5 +1,6 @@
 const Bought = require('../models').bought;
 const Users = require('../models').users;
+const Articles = require('../models').articles;
 module.exports = {
     create(req, res) {
         var token = req.headers.authorization;
@@ -29,7 +30,7 @@ module.exports = {
         }
     },
     all(req, res) {
-        Bought.findAll({where: {articleId: req.params.articleId}, include: [Users]})
+        Bought.findAll({include: [Users, Articles]})
             .then(results => {
                 if(results.length !== 0) {
                     res.status(200).send(results);

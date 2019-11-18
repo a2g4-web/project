@@ -28,18 +28,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8">
-                <div class="card-body">
-                <img src="assets/carte.png" alt="carte" class="w-40 img-fluid">
-                </div>
+                        <div class="card-body">
+                            <img src="assets/carte.png" alt="carte" class="w-40 img-fluid">
+                        </div>
                     </div>
                     <div class="col-md-4">
-                <div class="card-body col-md-10">
-                    <h1 class="card-title">+ de 1500 formations & modules sont enseignés sur nos 25 campus</h1>
-                </div>
+                        <div class="card-body col-md-10">
+                            <h1 class="card-title">+ de 1500 formations & modules sont enseignés sur nos 25 campus</h1>
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 
 
