@@ -24,6 +24,9 @@ footer p
 footer
 {
     margin-top: 25px;
+    position:relative;
+    bottom:0;
+    width:100%;
 }
 
 #campus
