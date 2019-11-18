@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card-body">
-                            <img src="assets/carte.png" alt="carte" class="w-40 img-fluid">
+                            <img src="assets/carte.png" alt="carte" class="w-40 img-fluid"> // Insert of the map of France with all campus of CESI
                         </div>
                     </div>
                     <div class="col-md-4">
