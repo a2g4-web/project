@@ -145,21 +145,27 @@ $.ajax({
 });
 
 function sortByBest() {
-    var a = [];
-    var b = [];
+    var a = new Map();
     $.ajax({
         url: 'http://minecloud.fr:8001/api/bought',
         type: 'GET',
         dataType: 'json',
         success: function (json) {
-            for(var i = 0; i < json.length; i++) {
-                b.push(0);
+            json.forEach(function (item) {
+                if(a.has(item.articleId)) {
+                    a.set(item.articleId, a.get(item.articleId)+1);
+                }
+                else {
+                    a.set(item.articleId, 1);
+                }
+            });
+            a[Symbol.iterator] = function* () {
+                yield*[...this.entries()].sort((a, b) => b[1] - a[1]);
+            };
+            for(var i = 0; i < 3; i++) {
+                console.log([...a][i]);
             }
-            for(var j = 0; j < json.length; j++) {
-                b[j]++;
-            }
-            b.sort();
-            console.log(b);
+            
         }
     });
 }
