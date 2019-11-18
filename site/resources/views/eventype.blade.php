@@ -15,14 +15,11 @@
                         <h2 class="card-title">{{$data['name']}}</h2><br>
                     </div>
                     <div class="offset-md-2 col-md-3">
-
                         @if(\App\User::getUser() != null)
-                            @if(\App\User::getUser()['usertypeId'] == 1)
-                                @if($participate == false)
-                                    <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
-                                @else
-                                    <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
-                                @endif
+                            @if($participate == false)
+                                <a href="/api/registerevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Inscription</a>
+                            @else
+                                <a href="/api/unregisterevent/{{$data['id']}}" class="btn btn-primary btn-elegant">Se désinscrire</a>
                             @endif
                         @else
                             <a href="#" class="btn btn-primary btn-elegant disabled">Vous devez être connecté pour participer</a>
@@ -34,14 +31,12 @@
                         <h3 class="card-description">{{$data['description']}}</h3>
                     </div>
                     <div class="offset-md-2 col-md-3">
-                        @if(\App\User::getUser()['usertypeId'] == 1)
                         @if($likes == true)
                             <a href="/api/like/{{$data['id']}}" class="red-text"><i class="fas fa-heart fa-2x"></i></a>
                         @else
                             @if(\App\User::getUser() != null)
                                 <a href="/api/like/{{$data['id']}}" class="text-dark"><i class="far fa-heart fa-2x"></i></a>
                             @endif
-                        @endif
                         @endif
                         @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
                             <a href="#" class="text-dark ml-4" id="downloadLink"><i class="fas fa-download fa-2x"></i></a>
