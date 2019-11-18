@@ -35,7 +35,7 @@ function writeEvent(event) {
         '                        <!-- Text -->\n' +
         '                        <p class="card-text">' + event.description + '</p>\n' +
         '                        <!-- Button -->\n' +
-        '                        <a href="/events/' + event.id + '" class="btn btn-primary">Voir</a>\n' +
+        '                        <a href="/events/' + event.id + '" class="btn btn-elegant">Voir</a>\n' +
         '                        <p class="float-right mt-3"><a href="/events/' + event.id + '" class="text-dark"><i class="fas fa-comments fa-2x"></i></a> <a href="/events/' + event.id +'" class="text-dark"><i class="far fa-heart fa-2x"></i></a> ' + getEuro(event.price) + '</p>' +
         '\n' +
         '                    </div>\n' +

@@ -43,8 +43,10 @@
                     <a class="nav-link" href="{{url('/events')}}"><i class="fas fa-calendar-alt"></i> Evènements</a>
                 </li>
                 <li class="nav-item @yield('active4')">
-                    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] != 2)
-                        <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Contact</a>
+                    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 1)
+                        <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Envoyer une idée </a>
+                    @elseif(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 3)
+                        <a class="nav-link" href="mailto:bde@viacesi.fr"><i class="far fa-envelope"></i> Signaler un contenu</a>
                     @endif
                 </li>
             </div>
