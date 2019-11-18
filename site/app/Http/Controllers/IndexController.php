@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\Console\Input\Input;
 
 class IndexController extends Controller
 {
@@ -26,8 +27,29 @@ class IndexController extends Controller
         return view('campus');
     }
 
-    public function shop() {
-        return view('shop');
+    public function shop($category = null) {
+        if($category == null)
+        {
+            return view('shop');
+        }
+        else
+        {
+            $response = $this->client->request('GET', '/api/articles');
+            $items = array();
+            if($response->getStatusCode() === 200)
+            {
+                $body = $response->getBody();
+                $articles = json_decode($body, true);
+                foreach ($articles as $item)
+                {
+                    if($item['category']['name'] == $category)
+                    {
+                        array_push($items, $item);
+                    }
+                }
+            }
+            return view('shop', ['articles' => $items]);
+        }
     }
 
     public function events() {

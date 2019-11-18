@@ -19,12 +19,14 @@
                 <p class="card-text text-center">Bienvenue sur la boutique de votre BDE, vous trouverez grand nombre d'articles à votre disposition</p>
                 <!-- Search form -->
                 <div class="row justify-content-center">
-                    <div class="md-form input-group col-md-2">
-                        <input aria-label="Search" class="form-control" id="recherche" placeholder="Rechercher" type="text">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue" id="recherche-link"><i class="fas fa-search"></i></a></span>
+                    @if(!isset($articles))
+                        <div class="md-form input-group col-md-2">
+                            <input aria-label="Search" class="form-control" id="recherche" placeholder="Rechercher" type="text">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue" id="recherche-link"><i class="fas fa-search"></i></a></span>
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -35,7 +37,26 @@
 
     <div class="container">
         <div class="row justify-content-center articles">
-
+            @if(isset($articles) && count($articles) > 0)
+                @foreach($articles as $item)
+                    <div class="col-md-4 col-lg-3 col-sm-12 pb-4">
+                        <div class="card card-cascade narrower card-ecommerce">
+                            <div class="view overlay">
+                                <img class="mx-auto w-100" src="{{$item['imageUrl']}}" alt="Card image cap" height="200">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body card-body-cascade text-center">
+                                <h4 class="card-title card-name">{{$item['name']}}</h4>
+                                <p class="card-text">{{$item['description']}}</p>
+                                <p class="card-price">{{$item['price']}}</p>
+                                <a href="/api/addtobasket/{{$item['id']}}" class="btn btn-primary" id="article-btn-{{$item['id']}}">Mettre au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 
@@ -66,10 +87,15 @@
                                 <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'article">
                             </div>
                             <div class="md-form">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'article">
                             </div>
-                            <div class="md-form">
-                                <input type="text" id="categoryId" name="categoryId" class="form-control" placeholder="Catégorie de l'article">
+                            <div class=md-form">
+                            <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId">
+                                <option value="" disabled="" selected="">Séléctionner la catégorie</option>
+                                <option value="1">Vêtements</option>
+                                <option value="2">Accessoire</option>
+                                <option value="3">Goodies</option>
+                            </select>
                             </div>
                             <div class="file-field">
                                 <div class="btn btn-primary">

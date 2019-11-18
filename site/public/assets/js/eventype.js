@@ -52,3 +52,13 @@ $('#downloadLink').click(function () {
         }
     });
 });
+
+$('#downloadImages').click(function () {
+    var url = window.location.href;
+    var idStr = url.split('/')[4];
+    var id = parseInt(idStr);
+    $.ajax({
+        url: '/api/downloadimages',
+        type: 'GET'
+    });
+});

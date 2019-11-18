@@ -76,6 +76,9 @@
                             </div>
                         </form>
                     @endif
+                    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] === 3)
+                        <button type="button" class="btn btn-primary btn-sm" id="downloadImages">Télécharger les images</button>
+                    @endif
                 </div>
             </div>
         </div>

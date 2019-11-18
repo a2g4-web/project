@@ -1,3 +1,8 @@
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
 var shopToHTML = function () {
     $.ajax({
         url: 'http://minecloud.fr:8001/api/articles',
@@ -43,7 +48,12 @@ function writeArticle(article) {
         '                </div>');
 }
 
-shopToHTML();
+console.log($('.articles').text());
+
+if($('.articles').text().replaceAll('\n', '').replaceAll(' ', '') === '')
+{
+    shopToHTML();
+}
 
 var liste = [];
 
@@ -60,11 +70,6 @@ $.ajax({
        });
    }
 });
-
-String.prototype.replaceAll = function(search, replacement) {
-  var target = this;
-  return target.replace(new RegExp(search, 'g'), replacement);
-};
 
 $('#recherche-link').click(function () {
     $('.card-name').each(function (e) {
