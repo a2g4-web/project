@@ -238,7 +238,7 @@ class UsersController extends Controller
                     ],
                     'json' => [
                         'eventId' => $eventId,
-                        'url' => '/storage/assets/img/' . $file->getClientOriginalName()
+                        'url' => '/assets/img/' . $file->getClientOriginalName()
                     ]
                 ]);
             }
