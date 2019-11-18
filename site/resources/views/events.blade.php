@@ -19,6 +19,7 @@
         <div class="row justify-content-center events">
 
         </div>
+
     </div>
 
     @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
