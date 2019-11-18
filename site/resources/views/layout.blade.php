@@ -31,7 +31,7 @@
                            aria-expanded="false">
                             <span class="sr-only">Toggle Dropdown</span>
                         </a>
-                        <div class="dropdown-menu" id="dropdownGoodies">
+                        <div class="dropdown-menu" id="dropdownCategory">
                             @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
                                 <a class="dropdown-item text-center" id="showModal" href="#"><i class="fas fa-plus"></i></a>
                             @endif
