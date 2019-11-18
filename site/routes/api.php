@@ -28,4 +28,3 @@ Route::post('/addevent', 'UsersController@addEvent');
 Route::get('/allowCookies', 'UsersController@allowCookies');
 Route::post('/addarticle', 'UsersController@addarticle');
 Route::post('/addcategory', 'UsersController@addcategory');
-Route::get('/downloadimages', 'FileController@downloadImages');

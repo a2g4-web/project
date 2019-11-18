@@ -45,7 +45,7 @@ module.exports = {
         });
     },
     all(req, res) {
-        Images.findAll({where: {eventId: req.params.id}, include: [Events]}).then(result => {
+        Images.findAll({include: [Events]}).then(result => {
             if(result.length !== 0) {
                 res.status(200).send(result);
             }

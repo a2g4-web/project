@@ -56,21 +56,4 @@ class FileController extends Controller
         }
         return back();
     }
-
-    public function downloadImages($eventId)
-    {
-        $response = $this->client->request('GET', '/api/event/' . $eventId . '/images');
-        if($response->getStatusCode() === 200)
-        {
-            $body = $response->getBody();
-            $images = json_decode($body, true);
-            foreach ($images as $item)
-            {
-                if(substr($item['url'], 0, 1) == '/')
-                {
-                    
-                }
-            }
-        }
-    }
 }
