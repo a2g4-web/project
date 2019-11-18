@@ -162,10 +162,22 @@ function sortByBest() {
             a[Symbol.iterator] = function* () {
                 yield*[...this.entries()].sort((a, b) => b[1] - a[1]);
             };
-            for(var i = 0; i < 3; i++) {
-                console.log([...a][i]);
-            }
-            
+            $('.articles').html('');
+            $.ajax({
+               url: 'http://minecloud.fr:8001/api/articles',
+               type: 'GET',
+               dataType: 'json',
+               success: function (articles) {
+                   for(var i = 0; i < 3; i++) {
+                       var current = [...a][i][0];
+                       articles.forEach(function (articleItem) {
+                           if(articleItem.id === current) {
+                               writeArticle(articleItem);
+                           }
+                       });
+                   }
+               }
+            });
         }
     });
 }

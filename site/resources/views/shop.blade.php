@@ -26,8 +26,14 @@
                                 <span class="input-group-text md-addon" id="material-addon-addon1"><a href="#" class="text-blue" id="recherche-link"><i class="fas fa-search"></i></a></span>
                             </div>
                         </div>
-                        <div class="md-form col-md-2">
-                            <a class="btn btn-elegant  btn-sm" onclick="sortByPrice()" >Trier par prix <i class="fas fa-sort"></i></a>
+                        <div class="md-form">
+                            <a class="btn btn-elegant  btn-sm" onclick="sortByPrice()" >Trier par prix</a>
+                        </div>
+                        <div class="md-form">
+                            <a class="btn btn-elegant  btn-sm" onclick="sortByBest()" >Top 3</a>
+                        </div>
+                        <div class="md-form">
+                            <a class="btn btn-elegant  btn-sm" onclick="shopToHTML()" >Voir tout</a>
                         </div>
                     @endif
                 </div>
