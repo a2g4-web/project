@@ -13,3 +13,4 @@ $('#showModal').click(function () {
     console.log('click');
     $('#categoryModal').modal('show');
 });
+
