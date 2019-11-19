@@ -69,6 +69,7 @@
         </div>
     </div>
 
+    <!-- si membre bde active ajout article -->
     @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
         <div class="btn-fix text-center">
             <a class="btn-floating btn-elegant btn-lg white-text" href="#" data-toggle="modal" data-target="#centralModalLg"><i class="fas fa-plus mt-3"></i></a>
