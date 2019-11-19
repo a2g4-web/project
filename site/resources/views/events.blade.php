@@ -22,7 +22,7 @@
 
     </div>
 
-    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2)
+    @if(\App\User::getUser() != null && \App\User::getUser()['usertypeId'] == 2) <!--Button to add event-->
         <div class="btn-fix text-center">
             <a class="btn-floating btn-elegant btn-lg white-text" href="#" data-toggle="modal" data-target="#centralModalLg"><i class="fas fa-plus mt-3"></i></a>
         </div>
@@ -41,26 +41,26 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form class="md-form" action="/api/addevent" enctype="multipart/form-data" method="POST" id="eventForm">
+                        <form class="md-form" action="/api/addevent" enctype="multipart/form-data" method="POST" id="eventForm"> <!--Form to add an event-->
                             <p class="h4 text-center">Ajouter un évènement</p>
                             <div class="md-form">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'évènement">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'évènement"> <!--Input for tame of the events-->
                             </div>
                             <div class="md-form">
-                                <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'évènement">
+                                <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'évènement"> <!--Input for the description of the event-->
                             </div>
                             <div class="md-form">
-                                <input type="text" id="location" name="location" class="form-control" placeholder="Lieu de l'évènement">
+                                <input type="text" id="location" name="location" class="form-control" placeholder="Lieu de l'évènement"> <!--Input for the localisation of the event-->
                             </div>
                             <div class="md-form">
-                                <input type="text" id="date" name="date" class="form-control" placeholder="Date de l'évènement">
+                                <input type="text" id="date" name="date" class="form-control" placeholder="Date de l'évènement"> <!--Input for the date of the event-->
                             </div>
                             <div class="md-form">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement">
+                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'évènement"> <!--Input for the price of the event-->
                             </div>
                             <div class="file-field">
                                 <div class="btn btn-primary">
-                                    <span id="addFile">Ajouter une image</span>
+                                    <span id="addFile">Ajouter une image</span> <!--Button to add an image to the event-->
                                     <input type="file" name="fileInput" id="fileInput" hidden>
                                 </div>
                                 <p id="fileName"></p>
@@ -70,8 +70,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button>
+                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button> <!--Button to close the window to add an event-->
+                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button> <!--Button to submit the form to add an event-->
                 </div>
             </div>
         </div>

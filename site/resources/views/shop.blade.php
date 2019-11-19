@@ -8,8 +8,6 @@
 
 @section('maincontent')
 
-
-
     <section class="text-center my-4">
 
         <div class="card">
@@ -27,13 +25,13 @@
                             </div>
                         </div>
                         <div class="md-form">
-                            <a class="btn btn-elegant  btn-sm" onclick="sortByPrice()" >Trier par prix</a>
+                            <a class="btn btn-elegant  btn-sm" onclick="sortByPrice()" >Trier par prix</a><!--Button to sort the articles by price-->
                         </div>
                         <div class="md-form">
-                            <a class="btn btn-elegant  btn-sm" onclick="sortByBest()" >Top 3</a>
+                            <a class="btn btn-elegant  btn-sm" onclick="sortByBest()" >Top 3</a><!--Button to show the best seller-->
                         </div>
                         <div class="md-form">
-                            <a class="btn btn-elegant  btn-sm" onclick="shopToHTML()" >Voir tout</a>
+                            <a class="btn btn-elegant  btn-sm" onclick="shopToHTML()" >Voir tout</a><!--Button to show all the articles-->
                         </div>
                     @endif
                 </div>
@@ -88,25 +86,25 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form action="/api/addarticle" enctype="multipart/form-data" method="post" id="articleForm">
+                        <form action="/api/addarticle" enctype="multipart/form-data" method="post" id="articleForm"> <!--Form to add an article in the shop-->
                             <p class="h4 text-center">Ajouter un article</p>
                             <div class="md-form">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'article">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de l'article"> <!--Input for the name of the article-->
                             </div>
                             <div class="md-form">
-                                <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'article">
+                                <input type="text" id="description" name="description" class="form-control" placeholder="Description de l'article"> <!--Input for the description of the article-->
                             </div>
                             <div class="md-form">
-                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'article">
+                                <input type="text" id="price" name="price" class="form-control" placeholder="Prix de l'article"> <!--Input for the price of the article-->
                             </div>
                             <div class=md-form">
-                                <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId">
+                                <select class="browser-default custom-select mb-3" name="categoryId" id="categoryId"> <!--Dropdown list to select the category of the article-->
                                     <option value="" disabled="" selected="">Séléctionner la catégorie</option>
                                 </select>
                             </div>
                             <div class="file-field">
                                 <div class="btn btn-primary">
-                                    <span id="addFile">Ajouter une image</span>
+                                    <span id="addFile">Ajouter une image</span> <!--Button to add an image to the article-->
                                     <input type="file" name="fileInput" id="fileInput" hidden>
                                 </div>
                                 <p id="fileName"></p>
@@ -116,8 +114,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button>
+                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button> <!--Button to close the window to add an article-->
+                    <button type="button" class="btn btn-primary btn-sm" id="formSend">Sauvegarder</button> <!--Button to submit the form to add an event-->
                 </div>
             </div>
         </div>
@@ -134,18 +132,18 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form action="/api/addcategory" enctype="multipart/form-data" method="post" id="categoryForm">
+                        <form action="/api/addcategory" enctype="multipart/form-data" method="post" id="categoryForm"> <!--Form to add a category to the shop-->
                             <p class="h4 text-center">Ajouter une catégorie</p>
                             <div class="md-form">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de la catégorie">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nom de la catégorie"> <!--Input for the name of the category-->
                             </div>
 
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-sm" id="formSends">Sauvegarder</button>
+                    <button type="button" class="btn btn-elegant btn-sm" data-dismiss="modal">Fermer</button> <!--Button to close the window to add a category-->
+                    <button type="button" class="btn btn-primary btn-sm" id="formSends">Sauvegarder</button> <!--Button to submit the form to add a category-->
                 </div>
             </div>
         </div>

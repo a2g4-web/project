@@ -1,10 +1,10 @@
-setInterval(rotate, 3000);
+setInterval(rotate, 3000); // Do the rotate of the carousel every 3 seconds
 
 
 var carousel = $(".carousel"),
     currdeg  = 0;
 
-function rotate(e){
+function rotate(e){ // Function to rotate the carousel
 
     currdeg = currdeg - 60;
 

@@ -16,7 +16,7 @@
                         <h2 class="card-title">Evenements</h2>
                         <p class="card-text">Quelques photos des évenements précédents !</p>
 
-                        <div class="container container_carousel">
+                        <div class="container container_carousel"> <!--Carouser 3D to show some photos of the events-->
                             <div class="carousel">
                                 <div class="item a">Barbecue<img src="/assets/img/img_carousel/barbecue_c.jpg"></div>
                                 <div class="item b">Canoe <img src="/assets/img/img_carousel/canoe_c.jpg"></div>
@@ -35,7 +35,7 @@
                         <h2 class="card-title">Boutique</h2>
                         <p class="card-text">Quelques articles en ventes dans notre boutique !</p>
 
-                        <div class="container container_carousel">
+                        <div class="container container_carousel"> <!--Carousel 3D to show some articles for send-->
                             <div class="carousel">
                                 <div class="test a">Coque d'Iphone <img src="assets/img/img_carousel/coque_c.jpg"></div>
                                 <div class="test b">Badges x5<img src="assets/img/img_carousel/badges_c.jpg"></div>

@@ -39,7 +39,7 @@
                         <td><a href="/shop" class="btn btn-elegant waves-effect text-white"><i class="fa fa-angle-left"></i> Continuer mes achats</a></td>
                         <td colspan="2" class="hidden-xs"></td>
                         <td class="hidden-xs text-center" style="width:10%;"><strong id="totalArticle"></strong></td>
-                        <td><a href="#" class="btn btn-success btn-elegant">Paiement <i class="fa fa-angle-right"></i></a></td>
+                        <td><a href="#" class="btn btn-success btn-elegant float-right">Paiement <i class="fa fa-angle-right"></i></a></td>
                     </tr>
                     </tfoot>
                 </table>
